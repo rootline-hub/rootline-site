@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rootline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rootline is a free, volunteer-run digital tech mentorship hub for people in the UK and Nigeria. Cohort 1 runs 7 Dec 2026 to 26 Feb 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single vertical "root line" runs down the left of every section; content branches off it. */
+:root{
+  --ground:#F4F7F3;      /* page, faint green bias */
+  --surface:#FFFFFF;
+  --ink:#10231A;         /* deep green-black text */
+  --muted:#4E6258;
+  --line:#D3DDD6;
+  --root:#0A7A47;        /* accent: Nigerian green */
+  --root-soft:#DDEFE4;
+  --sky:#1F3B73;         /* secondary: UK navy, used sparingly */
+  --on-root:#FFFFFF;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --s-1:.8125rem; --s0:1rem; --s1:1.1875rem; --s2:1.5rem; --s3:2.125rem; --s4:clamp(2.5rem,6vw,4.25rem);
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1612; --surface:#14211B; --ink:#E6F0EA; --muted:#9DB2A7; --line:#26382F;
+    --root:#3FBF7F; --root-soft:#163A28; --sky:#8FB0F0; --on-root:#06140D; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1612; --surface:#14211B; --ink:#E6F0EA; --muted:#9DB2A7; --line:#26382F;
+  --root:#3FBF7F; --root-soft:#163A28; --sky:#8FB0F0; --on-root:#06140D; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--ground)}
+a{color:var(--root);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--root);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:var(--s3);font-weight:800;letter-spacing:-.01em}
+h3{font-size:var(--s1);font-weight:700}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto}
+.label{font-family:var(--f-mono);font-size:var(--s-1);letter-spacing:.06em;text-transform:uppercase;color:var(--root)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--ground) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-inline:max(16px, env(safe-area-inset-left, 0px))}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none}
+.logo svg{width:26px;height:26px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.9375rem}
+nav a:hover{color:var(--ink)}
+@media (max-width:760px){nav{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .9375rem/1 var(--f-body);padding:13px 18px;border-radius:999px;text-decoration:none;border:1.5px solid var(--root);cursor:pointer}
+.btn-solid{background:var(--root);color:var(--on-root)}
+.btn-solid:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--root)}
+.btn-ghost:hover{background:var(--root-soft)}
+.btn[aria-disabled="true"]{background:var(--line);border-color:var(--line);color:var(--muted);pointer-events:none}
+.btn-sm{padding:9px 14px;font-size:.875rem}
+
+/* the root line */
+main{position:relative}
+.rooted{position:relative;padding-left:40px}
+.rooted::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--root);opacity:.35}
+.node{position:absolute;left:4px;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--ground);border:3px solid var(--root)}
+@media (max-width:520px){.rooted{padding-left:28px}.rooted::before{left:6px}.node{left:0;width:14px;height:14px}}
+
+section{padding-block:64px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.sec-head{display:grid;gap:10px;max-width:62ch;margin-bottom:32px;position:relative}
+.sec-head p{color:var(--muted);font-size:var(--s1)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;padding-block:56px 64px}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}}
+.hero h1{font-size:var(--s4);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--root)}
+.hero .lede{font-size:var(--s1);color:var(--muted);max-width:56ch;margin-top:18px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.status{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted);margin-top:14px}
+.status b{color:var(--ink);font-weight:500}
+.glance{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.glance dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:14px 0 0}
+.glance dt{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.glance dd{margin:0;font-weight:500;font-variant-numeric:tabular-nums}
+.tz{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted)}
+.tz span b{color:var(--ink);font-weight:500}
+
+/* mission */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.two > div{display:grid;gap:10px;align-content:start;min-width:0}
+.two p{color:var(--muted)}
+.pull{font-family:var(--f-display);font-size:var(--s2);font-weight:700;line-height:1.25;color:var(--ink)!important;max-width:30ch}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:step;display:grid;gap:8px;align-content:start;padding-top:16px;border-top:2px solid var(--root)}
+.steps li::before{content:"Step " counter(step);font-family:var(--f-mono);font-size:var(--s-1);color:var(--root);letter-spacing:.05em;text-transform:uppercase}
+.steps p{color:var(--muted);font-size:.9375rem}
+
+/* tracks */
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.tracks{grid-template-columns:1fr}}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:12px;align-content:start}
+.track .eg{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted)}
+.track ul{margin:0;padding-left:18px;color:var(--muted);font-size:.9375rem;display:grid;gap:4px}
+.track .cap{font-size:.9375rem;border-top:1px solid var(--line);padding-top:12px}
+.track .cap b{font-weight:600}
+.note{margin-top:18px;color:var(--muted);font-size:.9375rem}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding-block:14px;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:0}
+@media (max-width:560px){.tl li{grid-template-columns:1fr;gap:2px}}
+.tl time{font-family:var(--f-mono);font-size:.875rem;color:var(--root);font-variant-numeric:tabular-nums;padding-top:2px}
+.tl .what{font-weight:600}
+.tl .why{color:var(--muted);font-size:.9375rem}
+.tl li.break .what,.tl li.break time{color:var(--muted)}
+.tl li.key .what{font-family:var(--f-display);font-size:var(--s1)}
+
+/* apply panels */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:860px){.panels{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:16px;align-content:start;min-width:0}
+.panel.lead{border-color:var(--root);box-shadow:0 0 0 1px var(--root) inset}
+.panel h3{font-size:var(--s2)}
+.panel h4{margin:0;font-family:var(--f-mono);font-size:var(--s-1);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.panel .small{font-size:.875rem;color:var(--muted)}
+
+/* jobs */
+.jobs-tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{font:500 .875rem/1 var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.jobs{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.job{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:center}
+.job:last-child{border-bottom:0}
+.job .t{font-weight:600}
+.job .m{font-size:.875rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.job .tag{font-family:var(--f-mono);font-size:.75rem;padding:3px 8px;border-radius:4px;background:var(--root-soft);color:var(--ink)}
+.job .sample{background:var(--line)}
+@media (max-width:560px){.job{grid-template-columns:1fr}}
+.jobs-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:12px;font-size:.875rem;color:var(--muted)}
+.empty{padding:28px 20px;color:var(--muted)}
+
+/* faq + contact */
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-weight:600;list-style-position:outside}
+details p{color:var(--muted);margin-top:8px;max-width:70ch}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px}
+.email{font-family:var(--f-mono);font-size:var(--s1);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;user-select:all;overflow-wrap:anywhere}
+.copied{font-size:.875rem;color:var(--root);min-height:1.2em}
+
+footer{border-top:1px solid var(--line);padding-block:32px 48px;color:var(--muted);font-size:.875rem}
+footer .wrap{display:grid;gap:12px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Rootline home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v13" stroke="var(--root)" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9" stroke="var(--root)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="13" cy="4" r="3" fill="var(--root)"/></svg>
+      Rootline
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-solid btn-sm" href="#apply">Apply</a>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h-hero">
+    <div>
+      <span class="label">Free mentorship · UK &amp; Nigeria · Cohort 1</span>
+      <h1 id="h-hero">From first project to <em>first tech job.</em></h1>
+      <p class="lede">Rootline pairs people breaking into digital tech with professionals already doing the work. Ten weeks, one mentor, one real project to show employers. It's run by volunteers and it's free.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid js-mentee-btn" href="#apply">Apply as a mentee</a>
+        <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor</a>
+      </div>
+      <p class="status js-status">Mentee applications open <b>20 November 2026</b> and close <b>30 November</b>.</p>
+    </div>
+    <aside class="glance" aria-label="Cohort 1 at a glance">
+      <span class="label">Cohort 1 at a glance</span>
+      <dl>
+        <dt>Runs</dt><dd>7 Dec 2026 – 26 Feb 2027</dd>
+        <dt>Length</dt><dd>10 teaching weeks</dd>
+        <dt>Places</dt><dd>10 mentees, 5 mentors</dd>
+        <dt>Tracks</dt><dd>Data · Software · Product &amp; design</dd>
+        <dt>Format</dt><dd>Online, async-first</dd>
+        <dt>Cost</dt><dd>Free, always</dd>
+      </dl>
+      <div class="tz" aria-label="Time zones">
+        <span>London <b>GMT</b></span><span>Lagos <b>WAT</b> (+1h)</span>
+      </div>
+    </aside>
+  </section>
+
+  <div class="rooted">
+
+  <!-- MISSION -->
+  <section id="mission" aria-labelledby="h-mission">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Why Rootline</span>
+      <h2 id="h-mission">Courses teach tools. People get you hired.</h2>
+    </div>
+    <div class="two">
+      <div>
+        <p class="pull">Our mission is to give trainees a structured path from first project to first tech job, guided by people already doing the work.</p>
+      </div>
+      <div>
+        <p>Entry-level tech roles are hard to break into. Plenty of free courses teach the tools, but most people starting out still lack three things: someone to guide them, real project experience, and a route to employers.</p>
+        <p>Rootline gives you all three. You follow a track in your discipline, meet a working professional every fortnight, build a capstone project you can show, and get first look at junior roles on our free jobs board.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" aria-labelledby="h-how">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">How it works</span>
+      <h2 id="h-how">Four steps, ten weeks</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Apply</h3><p>Fill in a short form between 20 and 30 November. Tell us your track, your goals and the time you can give.</p></li>
+      <li><h3>Do a small task</h3><p>Complete a short screening task, about an hour. It shows us you're ready and gives your mentor a starting point.</p></li>
+      <li><h3>Get matched</h3><p>We match you by hand with a mentor in your field, based on your goals, availability and time zone.</p></li>
+      <li><h3>Build and graduate</h3><p>Fortnightly 1:1 calls, a group chat for questions, and a capstone project you present at our online demo day.</p></li>
+    </ol>
+  </section>
+
+  <!-- TRACKS -->
+  <section id="tracks" aria-labelledby="h-tracks">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Tracks</span>
+      <h2 id="h-tracks">Pick your discipline</h2>
+      <p>Every track follows the same shape: foundations, core tools, guided practice, then a capstone. The learning material is the best free content we can find, chosen by our mentors.</p>
+    </div>
+    <div class="tracks">
+      <article class="track">
+        <span class="label">Track</span>
+        <h3>Data</h3>
+        <span class="eg">Data engineering · analytics</span>
+        <ul><li>SQL and data modelling</li><li>Python for data</li><li>Pipelines and cloud basics</li><li>Dashboards and storytelling</li></ul>
+        <p class="cap"><b>Capstone:</b> a working data pipeline or analysis, published on GitHub.</p>
+      </article>
+      <article class="track">
+        <span class="label">Track</span>
+        <h3>Software engineering</h3>
+        <span class="eg">Web · backend</span>
+        <ul><li>Git and the command line</li><li>Web fundamentals</li><li>Building and testing an API</li><li>Deploying your app</li></ul>
+        <p class="cap"><b>Capstone:</b> a deployed web app with its code on GitHub.</p>
+      </article>
+      <article class="track">
+        <span class="label">Track</span>
+        <h3>Product &amp; design</h3>
+        <span class="eg">Product management · UX/UI</span>
+        <ul><li>User research and problem framing</li><li>Prioritisation and roadmaps</li><li>Wireframes and prototypes</li><li>Testing with real users</li></ul>
+        <p class="cap"><b>Capstone:</b> a product case study or prototype on a portfolio page.</p>
+      </article>
+    </div>
+    <p class="note">More tracks, such as cloud, cyber security and AI, will open as mentors join.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" aria-labelledby="h-timeline">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Timeline</span>
+      <h2 id="h-timeline">Cohort 1 dates</h2>
+    </div>
+    <ol class="tl">
+      <li><time datetime="2026-11-20">20 Nov 2026</time><div><div class="what">Applications open</div><div class="why">Mentee and mentor forms go live.</div></div></li>
+      <li><time datetime="2026-11-30">30 Nov 2026</time><div><div class="what">Applications close</div><div class="why">Midnight UK time (1am in Lagos). Screening tasks due the same day.</div></div></li>
+      <li><time datetime="2026-12-04">by 4 Dec 2026</time><div><div class="what">Places offered</div><div class="why">Everyone who applied hears back by email.</div></div></li>
+      <li class="key"><time datetime="2026-12-07">7–18 Dec</time><div><div class="what">Weeks 1–2 · Foundations</div><div class="why">Meet your mentor and set your goals.</div></div></li>
+      <li class="break"><time datetime="2026-12-21">21 Dec – 3 Jan</time><div><div class="what">Christmas break</div><div class="why">No sessions. Rest, or catch up if you want to.</div></div></li>
+      <li class="key"><time datetime="2027-01-04">4–15 Jan</time><div><div class="what">Weeks 3–4 · Core tools and skills</div></div></li>
+      <li class="key"><time datetime="2027-01-18">18–29 Jan</time><div><div class="what">Weeks 5–6 · Applied practice</div><div class="why">A guided exercise in your track.</div></div></li>
+      <li class="key"><time datetime="2027-02-01">1–26 Feb</time><div><div class="what">Weeks 7–10 · Capstone project</div></div></li>
+      <li class="key"><time datetime="2027-02-26">26 Feb 2027</time><div><div class="what">Online demo day</div><div class="why">Mentees present their projects. This is graduation.</div></div></li>
+    </ol>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply" aria-labelledby="h-apply">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Join cohort 1</span>
+      <h2 id="h-apply">Apply or volunteer</h2>
+    </div>
+    <div class="panels">
+      <article class="panel lead" aria-labelledby="h-mentee">
+        <h3 id="h-mentee">Apply as a mentee</h3>
+        <div>
+          <h4>Who can apply</h4>
+          <ul>
+            <li>You're 18 or over and live in the UK or Nigeria</li>
+            <li>You're a recent graduate or switching careers into tech</li>
+            <li>You've started learning already: a course, a tutorial, a small project</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What you commit to</h4>
+          <ul>
+            <li>About 5 hours a week for 10 weeks</li>
+            <li>A 1:1 call with your mentor every two weeks</li>
+            <li>A capstone project, shown at demo day on 26 Feb</li>
+          </ul>
+        </div>
+        <div class="cta-row" style="margin-top:4px">
+          <a class="btn btn-solid js-mentee-btn" href="#apply">Apply as a mentee</a>
+        </div>
+        <p class="small js-mentee-note">Applications open 20 November. There are 10 places, and it's free.</p>
+      </article>
+
+      <article class="panel" id="mentor" aria-labelledby="h-mentor">
+        <h3 id="h-mentor">Become a mentor</h3>
+        <div>
+          <h4>Who we're looking for</h4>
+          <ul>
+            <li>You work in data, software, product or design</li>
+            <li>You remember how hard the first role was to get</li>
+            <li>You're based anywhere, as long as UK or Nigeria hours suit you</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What you give</h4>
+          <ul>
+            <li>About 1 hour a week: a fortnightly call with each of your 2 mentees</li>
+            <li>Quick answers in the group chat when you can</li>
+            <li>Feedback on capstone projects</li>
+          </ul>
+        </div>
+        <div class="cta-row" style="margin-top:4px">
+          <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor</a>
+        </div>
+        <p class="small">Mentoring is voluntary and unpaid. You'll get a one-page mentor guide before you start.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- JOBS -->
+  <section id="jobs" aria-labelledby="h-jobs">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Jobs board</span>
+      <h2 id="h-jobs">Junior tech roles in the UK and Nigeria</h2>
+      <p>Hand-picked entry-level and graduate roles. We check every listing and link straight to the employer. Free to browse, free to list.</p>
+    </div>
+    <div class="jobs-tools" role="group" aria-label="Filter jobs by country">
+      <button class="chip" id="f-all" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" id="f-uk" aria-pressed="false" data-f="UK">UK</button>
+      <button class="chip" id="f-ng" aria-pressed="false" data-f="Nigeria">Nigeria</button>
+      <button class="chip" id="f-remote" aria-pressed="false" data-f="Remote">Remote</button>
+    </div>
+    <div class="jobs js-jobs" aria-live="polite"></div>
+    <div class="jobs-foot">
+      <span class="js-jobs-updated"></span>
+      <span>Hiring? Email us a link to the role and we'll list it for free.</span>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="h-faq">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Questions</span>
+      <h2 id="h-faq">Good to know</h2>
+    </div>
+    <details><summary>Does it really cost nothing?</summary><p>Yes. Rootline is run by volunteers, nobody is paid, and the programme, the learning material and the jobs board are all free. We'll never ask you for money.</p></details>
+    <details><summary>Can I be in Nigeria and have a UK mentor, or the other way round?</summary><p>Yes. We match across both countries. London and Lagos are only one hour apart, so calls are easy to arrange.</p></details>
+    <details><summary>What if my internet connection is unreliable?</summary><p>Rootline is async-first. Calls can be recorded, and most work happens in your own time, so you won't miss out if a call drops.</p></details>
+    <details><summary>I'm a complete beginner. Can I apply?</summary><p>Cohort 1 suits people who've already started learning, even a little. If you haven't started yet, pick one of the free courses we list for your track and apply for cohort 2.</p></details>
+    <details><summary>What happens to my data?</summary><p>We only use your application to run the programme. Our privacy policy explains what we collect, how long we keep it and how to ask us to delete it.</p></details>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="h-contact">
+    <span class="node" aria-hidden="true"></span>
+    <div class="sec-head">
+      <span class="label">Contact</span>
+      <h2 id="h-contact">Get in touch</h2>
+      <p>Questions about applying, mentoring, listing a job or partnering with us? Email us and a volunteer will reply within a few days.</p>
+    </div>
+    <div class="contact">
+      <span class="email js-email">hello@rootline.org.uk</span>
+      <button class="btn btn-ghost btn-sm" id="copy-email" type="button">Copy address</button>
+      <span class="copied js-copied" aria-live="polite"></span>
+    </div>
+  </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a class="js-coc" href="#">Code of conduct</a>
+      <a class="js-privacy" href="#">Privacy policy</a>
+      <a href="#contact">Raise a concern</a>
+    </div>
+    <p>Rootline is a volunteer-run, not-for-profit voluntary association with educational purposes, advancing digital skills in the UK and Nigeria. Everything we offer is free.</p>
+    <p>© <span class="js-year">2026</span> Rootline</p>
+  </div>
+</footer>
+
+<script>
+/* ============ SETTINGS: the only part you need to edit ============ */
+const CONFIG = {
+  email: "hello@rootline.org.uk",          // your contact address
+  menteeFormUrl: "",                       // paste the mentee form link (step 2)
+  mentorFormUrl: "",                       // paste the mentor form link (step 2)
+  codeOfConductUrl: "",                    // link added in step 4
+  privacyUrl: "",                          // link added in step 4
+  menteeOpens: "2026-11-20T00:00:00Z",
+  menteeCloses: "2026-11-30T23:59:59Z",
+  jobsUpdated: "",                         // e.g. "2026-11-20"
+  // Jobs board: one line per role. Remove the SAMPLE rows before launch.
+  jobs: [
+    { title:"SAMPLE · Graduate Data Analyst", org:"Example employer", country:"UK", place:"Manchester · Hybrid", track:"Data", url:"#", closes:"2026-12-15", sample:true },
+    { title:"SAMPLE · Junior Frontend Developer", org:"Example employer", country:"Nigeria", place:"Lagos · On-site", track:"Software", url:"#", closes:"2026-12-10", sample:true },
+    { title:"SAMPLE · Associate Product Designer", org:"Example employer", country:"Remote", place:"Remote (UK or Nigeria)", track:"Product & design", url:"#", closes:"2026-12-20", sample:true }
+  ]
+};
+/* ================================================================== */
+
+(function(){
+  const $ = (s) => document.querySelectorAll(s);
+  const now = new Date();
+  const opens = new Date(CONFIG.menteeOpens), closes = new Date(CONFIG.menteeCloses);
+  const fmt = (d) => d.toLocaleDateString("en-GB",{day:"numeric",month:"long"});
+
+  // Mentee buttons and status line follow the application window
+  let menteeHref = "#apply", menteeLabel = "Apply as a mentee", menteeOff = false;
+  let status = `Mentee applications open <b>${fmt(opens)} 2026</b> and close <b>${fmt(closes)}</b>.`;
+  let note = `Applications open ${fmt(opens)}. There are 10 places, and it's free.`;
+  if (now >= opens && now <= closes && CONFIG.menteeFormUrl){
+    menteeHref = CONFIG.menteeFormUrl;
+    status = `Mentee applications are <b>open</b> until <b>${fmt(closes)}</b>.`;
+    note = `Closes ${fmt(closes)} at midnight UK time. 10 places, free.`;
+  } else if (now > closes){
+    menteeLabel = "Applications closed"; menteeOff = true;
+    status = `Cohort 1 applications have closed. Email us to hear about cohort 2.`;
+    note = `Cohort 1 is full. Email us to hear when cohort 2 opens.`;
+  } else if (now < opens){
+    menteeLabel = `Opens ${fmt(opens)}`;
+  }
+  $(".js-mentee-btn").forEach(a => {
+    a.textContent = menteeLabel; a.href = menteeHref;
+    if (menteeOff) a.setAttribute("aria-disabled","true");
+    if (menteeHref.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
+  });
+  $(".js-status").forEach(el => el.innerHTML = status);
+  $(".js-mentee-note").forEach(el => el.textContent = note);
+
+  if (CONFIG.mentorFormUrl) $(".js-mentor-btn").forEach(a => { a.href = CONFIG.mentorFormUrl; a.target="_blank"; a.rel="noopener"; });
+  if (CONFIG.codeOfConductUrl) $(".js-coc").forEach(a => a.href = CONFIG.codeOfConductUrl);
+  if (CONFIG.privacyUrl) $(".js-privacy").forEach(a => a.href = CONFIG.privacyUrl);
+  $(".js-email").forEach(el => el.textContent = CONFIG.email);
+  $(".js-year").forEach(el => el.textContent = now.getFullYear());
+
+  // Copy email
+  document.getElementById("copy-email").addEventListener("click", () => {
+    const msg = document.querySelector(".js-copied");
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.querySelector(".js-email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = "Selected. Press Ctrl+C or ⌘C to copy."; };
+    try {
+      navigator.clipboard.writeText(CONFIG.email).then(() => msg.textContent = "Copied", fallback);
+    } catch(e){ fallback(); }
+  });
+
+  // Jobs board
+  const box = document.querySelector(".js-jobs");
+  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const live = CONFIG.jobs.filter(j => !j.closes || new Date(j.closes + "T23:59:59Z") >= now);
+  function render(f){
+    const rows = live.filter(j => f === "all" || j.country === f);
+    if (!rows.length){ box.innerHTML = `<p class="empty">No open roles here right now. New roles are added every week.</p>`; return; }
+    box.innerHTML = rows.map(j => `
+      <div class="job">
+        <div>
+          <div class="t">${esc(j.title)}</div>
+          <div class="m"><span>${esc(j.org)}</span><span>${esc(j.place)}</span>${j.closes ? `<span>Closes ${new Date(j.closes).toLocaleDateString("en-GB",{day:"numeric",month:"short"})}</span>` : ""}<span class="tag${j.sample ? " sample" : ""}">${esc(j.track)}</span></div>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="${esc(j.url)}" ${j.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>View role</a>
+      </div>`).join("");
+  }
+  render("all");
+  $(".chip").forEach(c => c.addEventListener("click", () => {
+    $(".chip").forEach(x => x.setAttribute("aria-pressed", x === c ? "true" : "false"));
+    render(c.dataset.f);
+  }));
+  const up = document.querySelector(".js-jobs-updated");
+  up.textContent = CONFIG.jobsUpdated ? `Last checked ${new Date(CONFIG.jobsUpdated).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})}` : "";
+})();
+</script>
+</body>
+</html>
