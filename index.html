@@ -7,6 +7,11 @@
 <title>Rootline</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Rootline is a free, volunteer-run digital tech mentorship hub for people in the UK and Nigeria. Cohort 1 runs 7 Dec 2026 to 26 Feb 2027.">
+<meta property="og:title" content="Rootline · Free tech mentorship for the UK and Nigeria">
+<meta property="og:description" content="10 weeks, one mentor, one real project. Applications for cohort 1 open 20 November 2026.">
+<meta property="og:url" content="https://rootline.org.uk/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 2v13' stroke='%230A7A47' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9' stroke='%230A7A47' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='13' cy='4' r='3' fill='%230A7A47'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -145,21 +150,6 @@ section:first-of-type{border-top:0}
 .panel ul{margin:0;padding-left:18px;display:grid;gap:5px}
 .panel .small{font-size:.875rem;color:var(--muted)}
 
-/* jobs */
-.jobs-tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.chip{font:500 .875rem/1 var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-.jobs{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
-.job{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:center}
-.job:last-child{border-bottom:0}
-.job .t{font-weight:600}
-.job .m{font-size:.875rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
-.job .tag{font-family:var(--f-mono);font-size:.75rem;padding:3px 8px;border-radius:4px;background:var(--root-soft);color:var(--ink)}
-.job .sample{background:var(--line)}
-@media (max-width:560px){.job{grid-template-columns:1fr}}
-.jobs-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:12px;font-size:.875rem;color:var(--muted)}
-.empty{padding:28px 20px;color:var(--muted)}
-
 /* faq + contact */
 details{border-bottom:1px solid var(--line);padding-block:14px}
 summary{cursor:pointer;font-weight:600;list-style-position:outside}
@@ -187,7 +177,7 @@ footer a{color:var(--muted)}
         <li><a href="#how">How it works</a></li>
         <li><a href="#tracks">Tracks</a></li>
         <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -214,9 +204,11 @@ footer a{color:var(--muted)}
       <dl>
         <dt>Runs</dt><dd>7 Dec 2026 – 26 Feb 2027</dd>
         <dt>Length</dt><dd>10 teaching weeks</dd>
+        <dt>Time</dt><dd>About 1 hour a week</dd>
         <dt>Places</dt><dd>10 mentees, 5 mentors</dd>
         <dt>Tracks</dt><dd>Data · Software · Product &amp; design</dd>
         <dt>Format</dt><dd>Online, async-first</dd>
+        <dt>Outcome</dt><dd>Capstone project + certificate</dd>
         <dt>Cost</dt><dd>Free, always</dd>
       </dl>
       <div class="tz" aria-label="Time zones">
@@ -239,8 +231,8 @@ footer a{color:var(--muted)}
         <p class="pull">Our mission is to give trainees a structured path from first project to first tech job, guided by people already doing the work.</p>
       </div>
       <div>
-        <p>Entry-level tech roles are hard to break into. Plenty of free courses teach the tools, but most people starting out still lack three things: someone to guide them, real project experience, and a route to employers.</p>
-        <p>Rootline gives you all three. You follow a track in your discipline, meet a working professional every fortnight, build a capstone project you can show, and get first look at junior roles on our free jobs board.</p>
+        <p>Entry-level tech roles are hard to break into. Plenty of free courses teach the tools, but most people starting out still lack three things: someone to guide them, real project experience, and a way to show employers what they can do.</p>
+        <p>Rootline gives you all three. You follow a track in your discipline, talk with a working professional every fortnight, and build a capstone project that you present at our online demo day.</p>
       </div>
     </div>
   </section>
@@ -253,10 +245,10 @@ footer a{color:var(--muted)}
       <h2 id="h-how">Four steps, ten weeks</h2>
     </div>
     <ol class="steps">
-      <li><h3>Apply</h3><p>Fill in a short form between 20 and 30 November. Tell us your track, your goals and the time you can give.</p></li>
-      <li><h3>Do a small task</h3><p>Complete a short screening task, about an hour. It shows us you're ready and gives your mentor a starting point.</p></li>
+      <li><h3>Apply</h3><p>Fill in a short form between 20 and 30 November. Tell us your track, your goals and what you've learned so far.</p></li>
+      <li><h3>Have a short interview</h3><p>Shortlisted applicants have a 20-minute video call with one of our mentors between 1 and 3 December. It's a friendly chat about your goals, not a technical test.</p></li>
       <li><h3>Get matched</h3><p>We match you by hand with a mentor in your field, based on your goals, availability and time zone.</p></li>
-      <li><h3>Build and graduate</h3><p>Fortnightly 1:1 calls, a group chat for questions, and a capstone project you present at our online demo day.</p></li>
+      <li><h3>Build and graduate</h3><p>Fortnightly calls with your mentor, a group chat for questions, and a capstone project you present at our online demo day. Graduates receive a certificate of completion.</p></li>
     </ol>
   </section>
 
@@ -303,14 +295,15 @@ footer a{color:var(--muted)}
     </div>
     <ol class="tl">
       <li><time datetime="2026-11-20">20 Nov 2026</time><div><div class="what">Applications open</div><div class="why">Mentee and mentor forms go live.</div></div></li>
-      <li><time datetime="2026-11-30">30 Nov 2026</time><div><div class="what">Applications close</div><div class="why">Midnight UK time (1am in Lagos). Screening tasks due the same day.</div></div></li>
+      <li><time datetime="2026-11-30">30 Nov 2026</time><div><div class="what">Applications close</div><div class="why">Midnight UK time (1am in Lagos).</div></div></li>
+      <li><time datetime="2026-12-01">1–3 Dec 2026</time><div><div class="what">Interviews</div><div class="why">20-minute video calls with shortlisted applicants.</div></div></li>
       <li><time datetime="2026-12-04">by 4 Dec 2026</time><div><div class="what">Places offered</div><div class="why">Everyone who applied hears back by email.</div></div></li>
       <li class="key"><time datetime="2026-12-07">7–18 Dec</time><div><div class="what">Weeks 1–2 · Foundations</div><div class="why">Meet your mentor and set your goals.</div></div></li>
       <li class="break"><time datetime="2026-12-21">21 Dec – 3 Jan</time><div><div class="what">Christmas break</div><div class="why">No sessions. Rest, or catch up if you want to.</div></div></li>
       <li class="key"><time datetime="2027-01-04">4–15 Jan</time><div><div class="what">Weeks 3–4 · Core tools and skills</div></div></li>
       <li class="key"><time datetime="2027-01-18">18–29 Jan</time><div><div class="what">Weeks 5–6 · Applied practice</div><div class="why">A guided exercise in your track.</div></div></li>
       <li class="key"><time datetime="2027-02-01">1–26 Feb</time><div><div class="what">Weeks 7–10 · Capstone project</div></div></li>
-      <li class="key"><time datetime="2027-02-26">26 Feb 2027</time><div><div class="what">Online demo day</div><div class="why">Mentees present their projects. This is graduation.</div></div></li>
+      <li class="key"><time datetime="2027-02-26">26 Feb 2027</time><div><div class="what">Online demo day</div><div class="why">Mentees present their projects and receive their certificates. This is graduation.</div></div></li>
     </ol>
   </section>
 
@@ -335,9 +328,17 @@ footer a{color:var(--muted)}
         <div>
           <h4>What you commit to</h4>
           <ul>
-            <li>About 5 hours a week for 10 weeks</li>
-            <li>A 1:1 call with your mentor every two weeks</li>
+            <li>About 1 hour a week for 10 weeks</li>
+            <li>A 30-minute call with your mentor every two weeks</li>
             <li>A capstone project, shown at demo day on 26 Feb</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What you get</h4>
+          <ul>
+            <li>A mentor working in your field</li>
+            <li>A portfolio project you can show employers</li>
+            <li>A Rootline certificate of completion</li>
           </ul>
         </div>
         <div class="cta-row" style="margin-top:4px">
@@ -359,9 +360,9 @@ footer a{color:var(--muted)}
         <div>
           <h4>What you give</h4>
           <ul>
-            <li>About 1 hour a week: a fortnightly call with each of your 2 mentees</li>
-            <li>Quick answers in the group chat when you can</li>
-            <li>Feedback on capstone projects</li>
+            <li>About 1 hour every two weeks: a 30-minute call with each of your 2 mentees</li>
+            <li>A few short interviews with applicants, 1–3 December</li>
+            <li>Quick answers in the group chat, and feedback on capstone projects</li>
           </ul>
         </div>
         <div class="cta-row" style="margin-top:4px">
@@ -372,27 +373,6 @@ footer a{color:var(--muted)}
     </div>
   </section>
 
-  <!-- JOBS -->
-  <section id="jobs" aria-labelledby="h-jobs">
-    <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
-      <span class="label">Jobs board</span>
-      <h2 id="h-jobs">Junior tech roles in the UK and Nigeria</h2>
-      <p>Hand-picked entry-level and graduate roles. We check every listing and link straight to the employer. Free to browse, free to list.</p>
-    </div>
-    <div class="jobs-tools" role="group" aria-label="Filter jobs by country">
-      <button class="chip" id="f-all" aria-pressed="true" data-f="all">All</button>
-      <button class="chip" id="f-uk" aria-pressed="false" data-f="UK">UK</button>
-      <button class="chip" id="f-ng" aria-pressed="false" data-f="Nigeria">Nigeria</button>
-      <button class="chip" id="f-remote" aria-pressed="false" data-f="Remote">Remote</button>
-    </div>
-    <div class="jobs js-jobs" aria-live="polite"></div>
-    <div class="jobs-foot">
-      <span class="js-jobs-updated"></span>
-      <span>Hiring? Email us a link to the role and we'll list it for free.</span>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq" aria-labelledby="h-faq">
     <span class="node" aria-hidden="true"></span>
@@ -400,10 +380,12 @@ footer a{color:var(--muted)}
       <span class="label">Questions</span>
       <h2 id="h-faq">Good to know</h2>
     </div>
-    <details><summary>Does it really cost nothing?</summary><p>Yes. Rootline is run by volunteers, nobody is paid, and the programme, the learning material and the jobs board are all free. We'll never ask you for money.</p></details>
+    <details><summary>Does it really cost nothing?</summary><p>Yes. Rootline is run by volunteers, nobody is paid, and the programme and the learning material are free. We'll never ask you for money.</p></details>
+    <details><summary>What happens in the interview?</summary><p>It's a 20-minute video call with one of our mentors. We'll ask what you've learned so far, what you'd like to build and how much time you can give. It isn't a technical test, and there's nothing to prepare beyond thinking about your goals.</p></details>
+    <details><summary>Do I get a certificate?</summary><p>Yes. Mentees who complete the programme and present at demo day receive a Rootline certificate of completion with a unique ID that employers can check with us. It records what you did with Rootline. It isn't an accredited or regulated qualification.</p></details>
     <details><summary>Can I be in Nigeria and have a UK mentor, or the other way round?</summary><p>Yes. We match across both countries. London and Lagos are only one hour apart, so calls are easy to arrange.</p></details>
     <details><summary>What if my internet connection is unreliable?</summary><p>Rootline is async-first. Calls can be recorded, and most work happens in your own time, so you won't miss out if a call drops.</p></details>
-    <details><summary>I'm a complete beginner. Can I apply?</summary><p>Cohort 1 suits people who've already started learning, even a little. If you haven't started yet, pick one of the free courses we list for your track and apply for cohort 2.</p></details>
+    <details><summary>I'm a complete beginner. Can I apply?</summary><p>Cohort 1 suits people who've already started learning, even a little. If you haven't started yet, pick a free course in your track and apply for cohort 2.</p></details>
     <details><summary>What happens to my data?</summary><p>We only use your application to run the programme. Our privacy policy explains what we collect, how long we keep it and how to ask us to delete it.</p></details>
   </section>
 
@@ -413,7 +395,7 @@ footer a{color:var(--muted)}
     <div class="sec-head">
       <span class="label">Contact</span>
       <h2 id="h-contact">Get in touch</h2>
-      <p>Questions about applying, mentoring, listing a job or partnering with us? Email us and a volunteer will reply within a few days.</p>
+      <p>Questions about applying, mentoring or partnering with us? Email us and a volunteer will reply within a few days.</p>
     </div>
     <div class="contact">
       <span class="email js-email">hello@rootline.org.uk</span>
@@ -428,8 +410,8 @@ footer a{color:var(--muted)}
 <footer>
   <div class="wrap">
     <div class="links">
-      <a class="js-coc" href="#">Code of conduct</a>
-      <a class="js-privacy" href="#">Privacy policy</a>
+      <a class="js-coc" href="#contact">Code of conduct</a>
+      <a class="js-privacy" href="#contact">Privacy policy</a>
       <a href="#contact">Raise a concern</a>
     </div>
     <p>Rootline is a volunteer-run, not-for-profit voluntary association with educational purposes, advancing digital skills in the UK and Nigeria. Everything we offer is free.</p>
@@ -446,14 +428,7 @@ const CONFIG = {
   codeOfConductUrl: "",                    // link added in step 4
   privacyUrl: "",                          // link added in step 4
   menteeOpens: "2026-11-20T00:00:00Z",
-  menteeCloses: "2026-11-30T23:59:59Z",
-  jobsUpdated: "",                         // e.g. "2026-11-20"
-  // Jobs board: one line per role. Remove the SAMPLE rows before launch.
-  jobs: [
-    { title:"SAMPLE · Graduate Data Analyst", org:"Example employer", country:"UK", place:"Manchester · Hybrid", track:"Data", url:"#", closes:"2026-12-15", sample:true },
-    { title:"SAMPLE · Junior Frontend Developer", org:"Example employer", country:"Nigeria", place:"Lagos · On-site", track:"Software", url:"#", closes:"2026-12-10", sample:true },
-    { title:"SAMPLE · Associate Product Designer", org:"Example employer", country:"Remote", place:"Remote (UK or Nigeria)", track:"Product & design", url:"#", closes:"2026-12-20", sample:true }
-  ]
+  menteeCloses: "2026-11-30T23:59:59Z"
 };
 /* ================================================================== */
 
@@ -461,10 +436,11 @@ const CONFIG = {
   const $ = (s) => document.querySelectorAll(s);
   const now = new Date();
   const opens = new Date(CONFIG.menteeOpens), closes = new Date(CONFIG.menteeCloses);
-  const fmt = (d) => d.toLocaleDateString("en-GB",{day:"numeric",month:"long"});
+  const fmt = (d) => d.toLocaleDateString("en-GB",{day:"numeric",month:"long",timeZone:"Europe/London"});
+  const ext = (a, url) => { a.href = url; a.target = "_blank"; a.rel = "noopener"; };
 
   // Mentee buttons and status line follow the application window
-  let menteeHref = "#apply", menteeLabel = "Apply as a mentee", menteeOff = false;
+  let menteeHref = "", menteeLabel = "Apply as a mentee", menteeOff = false;
   let status = `Mentee applications open <b>${fmt(opens)} 2026</b> and close <b>${fmt(closes)}</b>.`;
   let note = `Applications open ${fmt(opens)}. There are 10 places, and it's free.`;
   if (now >= opens && now <= closes && CONFIG.menteeFormUrl){
@@ -479,16 +455,16 @@ const CONFIG = {
     menteeLabel = `Opens ${fmt(opens)}`;
   }
   $(".js-mentee-btn").forEach(a => {
-    a.textContent = menteeLabel; a.href = menteeHref;
+    a.textContent = menteeLabel;
+    if (menteeHref) ext(a, menteeHref);
     if (menteeOff) a.setAttribute("aria-disabled","true");
-    if (menteeHref.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
   });
   $(".js-status").forEach(el => el.innerHTML = status);
   $(".js-mentee-note").forEach(el => el.textContent = note);
 
-  if (CONFIG.mentorFormUrl) $(".js-mentor-btn").forEach(a => { a.href = CONFIG.mentorFormUrl; a.target="_blank"; a.rel="noopener"; });
-  if (CONFIG.codeOfConductUrl) $(".js-coc").forEach(a => a.href = CONFIG.codeOfConductUrl);
-  if (CONFIG.privacyUrl) $(".js-privacy").forEach(a => a.href = CONFIG.privacyUrl);
+  if (CONFIG.mentorFormUrl) $(".js-mentor-btn").forEach(a => ext(a, CONFIG.mentorFormUrl));
+  if (CONFIG.codeOfConductUrl) $(".js-coc").forEach(a => ext(a, CONFIG.codeOfConductUrl));
+  if (CONFIG.privacyUrl) $(".js-privacy").forEach(a => ext(a, CONFIG.privacyUrl));
   $(".js-email").forEach(el => el.textContent = CONFIG.email);
   $(".js-year").forEach(el => el.textContent = now.getFullYear());
 
@@ -500,30 +476,6 @@ const CONFIG = {
       navigator.clipboard.writeText(CONFIG.email).then(() => msg.textContent = "Copied", fallback);
     } catch(e){ fallback(); }
   });
-
-  // Jobs board
-  const box = document.querySelector(".js-jobs");
-  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const live = CONFIG.jobs.filter(j => !j.closes || new Date(j.closes + "T23:59:59Z") >= now);
-  function render(f){
-    const rows = live.filter(j => f === "all" || j.country === f);
-    if (!rows.length){ box.innerHTML = `<p class="empty">No open roles here right now. New roles are added every week.</p>`; return; }
-    box.innerHTML = rows.map(j => `
-      <div class="job">
-        <div>
-          <div class="t">${esc(j.title)}</div>
-          <div class="m"><span>${esc(j.org)}</span><span>${esc(j.place)}</span>${j.closes ? `<span>Closes ${new Date(j.closes).toLocaleDateString("en-GB",{day:"numeric",month:"short"})}</span>` : ""}<span class="tag${j.sample ? " sample" : ""}">${esc(j.track)}</span></div>
-        </div>
-        <a class="btn btn-ghost btn-sm" href="${esc(j.url)}" ${j.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>View role</a>
-      </div>`).join("");
-  }
-  render("all");
-  $(".chip").forEach(c => c.addEventListener("click", () => {
-    $(".chip").forEach(x => x.setAttribute("aria-pressed", x === c ? "true" : "false"));
-    render(c.dataset.f);
-  }));
-  const up = document.querySelector(".js-jobs-updated");
-  up.textContent = CONFIG.jobsUpdated ? `Last checked ${new Date(CONFIG.jobsUpdated).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})}` : "";
 })();
 </script>
 </body>
