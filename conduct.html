@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 2v13' stroke='%230A7A47' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9' stroke='%230A7A47' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='13' cy='4' r='3' fill='%230A7A47'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--ground:#F4F7F3;--surface:#FFFFFF;--ink:#10231A;--muted:#4E6258;--line:#D3DDD6;--root:#0A7A47;--root-soft:#DDEFE4;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--f-body:"Schibsted Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#0D1612;--surface:#14211B;--ink:#E6F0EA;--muted:#9DB2A7;--line:#26382F;--root:#3FBF7F;--root-soft:#163A28;color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#0D1612;--surface:#14211B;--ink:#E6F0EA;--muted:#9DB2A7;--line:#26382F;--root:#3FBF7F;--root-soft:#163A28;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.65 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--root);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--root);outline-offset:3px;border-radius:4px}
+header{border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:var(--ink);text-decoration:none}
+.logo svg{width:24px;height:24px}
+.back{font-size:.9375rem;color:var(--muted)}
+main{max-width:760px;margin:0 auto;padding-block:48px 64px}
+.label{font-family:var(--f-mono);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--root)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,2.75rem);font-weight:800;letter-spacing:-.02em;margin:10px 0 12px}
+h2{font-size:1.375rem;font-weight:700;margin:40px 0 10px;padding-top:24px;border-top:1px solid var(--line)}
+h3{font-size:1.0625rem;font-weight:700;margin:22px 0 6px}
+p,li{color:var(--ink)}
+.lede{font-size:1.125rem;color:var(--muted);max-width:62ch}
+.meta{font-family:var(--f-mono);font-size:.8125rem;color:var(--muted)}
+ul,ol{padding-left:22px}
+li{margin-block:4px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--root);border-radius:8px;padding:14px 18px;margin:20px 0}
+.tbl{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9375rem}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:var(--root-soft)}
+tr:last-child td{border-bottom:0}
+code{font-family:var(--f-mono);font-size:.9em;background:var(--root-soft);padding:1px 5px;border-radius:4px}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--muted);font-size:.875rem}
+footer div{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--muted)}
+</style>
+<title>Rootline Code of Conduct</title>
+<meta name="description" content="How everyone at Rootline is expected to behave, and how to raise a concern.">
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="/"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" style="color:var(--root)"/><path d="M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" style="color:var(--root)"/><circle cx="13" cy="4" r="3" fill="currentColor" style="color:var(--root)"/></svg>Rootline</a>
+  <a class="back" href="/">Back to rootline.org.uk</a>
+</div></header>
+<main>
+  <span class="label">Code of conduct</span>
+  <h1>How we treat each other</h1>
+  <p class="meta">Last updated 12 November 2026</p>
+  <p class="lede">Rootline works because people give their time and trust. This code applies to everyone: mentees, mentors, committee members and guests.</p>
+
+  <div class="note">Rootline is free. <strong>No one at Rootline will ever ask you for money</strong>, bank details or payment for a job, a reference or a place on the programme. If anyone does, report it to <strong>concerns@rootline.org.uk</strong>.</div>
+
+  <h2>Where it applies</h2>
+  <p>On calls, in the cohort group chat, in emails and messages, at demo day, and anywhere you represent Rootline, including on social media.</p>
+
+  <h2>What we expect</h2>
+  <ul>
+    <li><strong>Be respectful.</strong> Treat everyone with courtesy, whatever their background, experience or views.</li>
+    <li><strong>Be reliable.</strong> Turn up to calls you've agreed to. If you can't make one, say so as early as you can.</li>
+    <li><strong>Keep things private.</strong> Don't share other people's personal information, messages or work without their permission.</li>
+    <li><strong>Give useful feedback.</strong> Be honest and kind, and focus on the work, not the person.</li>
+    <li><strong>Do your own work.</strong> Capstone projects should be your own. Say clearly where you used tutorials, templates or AI tools.</li>
+    <li><strong>Speak up.</strong> If something feels wrong, tell us. You won't get in trouble for raising a concern in good faith.</li>
+  </ul>
+
+  <h2>What isn't acceptable</h2>
+  <ul>
+    <li>Harassment, bullying, threats or intimidation, in person or online</li>
+    <li>Discrimination, including on the basis of race, ethnicity, nationality, religion, sex, gender identity, sexual orientation, disability or age</li>
+    <li>Unwanted sexual attention, comments or images, or any romantic or sexual approach between mentors and mentees</li>
+    <li>Asking for or offering money, gifts or favours in return for mentoring, referrals or places</li>
+    <li>Using Rootline to sell or promote paid courses, services or products</li>
+    <li>Sharing someone's personal information or private messages without permission</li>
+    <li>Passing off someone else's work as your own</li>
+  </ul>
+
+  <h2>Extra guidance for mentors</h2>
+  <ul>
+    <li>Keep contact on Rootline channels: video calls, the group chat or email. Cohort 1 is online only.</li>
+    <li>Only record a call if your mentee agrees first.</li>
+    <li>You are a guide, not a recruiter. You're not expected to find your mentee a job, and any referral is your own choice.</li>
+    <li>Don't ask mentees for personal documents, financial details or access to their accounts.</li>
+    <li>If a mentee tells you something worrying about their safety or wellbeing, tell the committee.</li>
+  </ul>
+
+  <h2 id="concerns">How to raise a concern</h2>
+  <ol>
+    <li>Email <strong>concerns@rootline.org.uk</strong>. Your email goes only to the Rootline committee. If your concern is about a committee member, email one of the other committee members directly instead.</li>
+    <li>We will reply within 3 days, keep your concern as private as we can, and tell you what we plan to do.</li>
+    <li>We may talk to the people involved, give a warning, change a mentor match, or remove someone from the programme or from Rootline.</li>
+    <li>If you disagree with a decision, you can ask the whole committee to review it.</li>
+  </ol>
+  <p>If someone is in immediate danger, or a crime may have been committed, contact the police first: 999 in the UK or 112 in Nigeria.</p>
+
+  <h2>Agreeing to this code</h2>
+  <p>Mentees and mentors agree to this code when they apply. Breaking it may mean losing your place on the programme or your role at Rootline.</p>
+</main>
+<footer><div><a href="/">Home</a><a href="privacy.html">Privacy policy</a><span>© 2026 Rootline</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 2v13' stroke='%230A7A47' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9' stroke='%230A7A47' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='13' cy='4' r='3' fill='%230A7A47'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--ground:#F4F7F3;--surface:#FFFFFF;--ink:#10231A;--muted:#4E6258;--line:#D3DDD6;--root:#0A7A47;--root-soft:#DDEFE4;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--f-body:"Schibsted Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#0D1612;--surface:#14211B;--ink:#E6F0EA;--muted:#9DB2A7;--line:#26382F;--root:#3FBF7F;--root-soft:#163A28;color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#0D1612;--surface:#14211B;--ink:#E6F0EA;--muted:#9DB2A7;--line:#26382F;--root:#3FBF7F;--root-soft:#163A28;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.65 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--root);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--root);outline-offset:3px;border-radius:4px}
+header{border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:var(--ink);text-decoration:none}
+.logo svg{width:24px;height:24px}
+.back{font-size:.9375rem;color:var(--muted)}
+main{max-width:760px;margin:0 auto;padding-block:48px 64px}
+.label{font-family:var(--f-mono);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--root)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,2.75rem);font-weight:800;letter-spacing:-.02em;margin:10px 0 12px}
+h2{font-size:1.375rem;font-weight:700;margin:40px 0 10px;padding-top:24px;border-top:1px solid var(--line)}
+h3{font-size:1.0625rem;font-weight:700;margin:22px 0 6px}
+p,li{color:var(--ink)}
+.lede{font-size:1.125rem;color:var(--muted);max-width:62ch}
+.meta{font-family:var(--f-mono);font-size:.8125rem;color:var(--muted)}
+ul,ol{padding-left:22px}
+li{margin-block:4px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--root);border-radius:8px;padding:14px 18px;margin:20px 0}
+.tbl{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9375rem}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:var(--root-soft)}
+tr:last-child td{border-bottom:0}
+code{font-family:var(--f-mono);font-size:.9em;background:var(--root-soft);padding:1px 5px;border-radius:4px}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--muted);font-size:.875rem}
+footer div{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--muted)}
+</style>
+<title>Rootline Privacy Policy</title>
+<meta name="description" content="How Rootline collects, uses and protects personal information, under UK GDPR and the Nigeria Data Protection Act 2023.">
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="/"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" style="color:var(--root)"/><path d="M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" style="color:var(--root)"/><circle cx="13" cy="4" r="3" fill="currentColor" style="color:var(--root)"/></svg>Rootline</a>
+  <a class="back" href="/">Back to rootline.org.uk</a>
+</div></header>
+<main>
+  <span class="label">Privacy policy</span>
+  <h1>How we use your information</h1>
+  <p class="meta">Last updated 12 November 2026</p>
+  <p class="lede">Rootline only collects what it needs to run free mentoring. We never sell your information, never use it for advertising, and never charge for anything.</p>
+
+  <div class="note">Questions, or want to see, correct or delete your information? Email <strong>privacy@rootline.org.uk</strong>. We reply within one month.</div>
+
+  <h2>Who we are</h2>
+  <p>Rootline is a volunteer-run, not-for-profit voluntary association with educational purposes. It offers free tech mentorship to people in the United Kingdom and Nigeria. Rootline's committee is responsible for your information, acting as the "data controller" under UK data protection law (UK GDPR and the Data Protection Act 2018) and the Nigeria Data Protection Act 2023.</p>
+
+  <h2>What we collect</h2>
+  <h3>If you apply to be a mentee</h3>
+  <ul>
+    <li>Your name, email address, country, and town or city</li>
+    <li>Confirmation that you are 18 or over</li>
+    <li>Optional: your WhatsApp number and LinkedIn profile</li>
+    <li>Your track, background, what you have learned so far, links to your work, your goals and your capstone idea</li>
+    <li>When you are free for calls and interviews, how reliable your internet is, and how you heard about us</li>
+    <li>Your choices about being featured publicly, follow-up contact and testimonials</li>
+    <li>Our interview notes, scores and decision</li>
+  </ul>
+  <h3>If you take part in the programme</h3>
+  <ul>
+    <li>Your mentor match, call dates and progress notes</li>
+    <li>Your capstone project link and demo day presentation</li>
+    <li>Your certificate of completion: your name, track, date and certificate ID</li>
+  </ul>
+  <h3>If you apply to be a mentor</h3>
+  <ul>
+    <li>Your name, email address, country, town or city, job title, employer (optional), years of experience and LinkedIn profile</li>
+    <li>The tracks and areas you can mentor, how many mentees you can take, and your availability</li>
+    <li>Your agreements and choices, such as being listed on our website</li>
+  </ul>
+  <h3>If you email us or visit our website</h3>
+  <ul>
+    <li>Your emails and our replies</li>
+    <li>Our website does not use cookies. We use Cloudflare Web Analytics, which counts visits without cookies and without identifying you. Cloudflare also briefly processes your IP address to deliver and protect the site.</li>
+  </ul>
+
+  <h2>Why we use it</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>What we do</th><th>Lawful basis</th></tr></thead>
+    <tbody>
+      <tr><td>Review applications, interview applicants and match mentees with mentors</td><td>Your consent when you apply, and our legitimate interest in running a fair programme</td></tr>
+      <tr><td>Run the programme: calls, group chat, progress and demo day</td><td>Your consent and our legitimate interest in delivering the mentoring you signed up for</td></tr>
+      <tr><td>Issue certificates and confirm them if an employer asks</td><td>Our legitimate interest, and yours, in certificates that can be checked</td></tr>
+      <tr><td>Feature your name, track and project publicly, contact you for 6 months about job outcomes, and ask for a testimonial</td><td>Only if you said yes. You can withdraw at any time.</td></tr>
+      <tr><td>Report anonymous totals, such as the number of applicants and completion rates</td><td>Our legitimate interest in showing our impact. Totals never identify you.</td></tr>
+      <tr><td>Handle concerns raised under our code of conduct</td><td>Our legitimate interest in keeping people safe</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Who can see it</h2>
+  <ul>
+    <li><strong>Rootline's committee</strong> can see applications and programme records.</li>
+    <li><strong>Your interviewer and your mentor</strong> see what they need to interview or mentor you.</li>
+    <li><strong>Other mentees in your cohort</strong> see your name and WhatsApp number if you join the cohort group chat.</li>
+    <li><strong>Service providers</strong> store or carry information for us under their own data protection terms:
+      <ul>
+        <li>Google, for forms, spreadsheets, email and video calls</li>
+        <li>Cloudflare, for our website and email forwarding</li>
+        <li>WhatsApp, for the group chat, if you join it</li>
+      </ul>
+    </li>
+  </ul>
+  <p>We do not sell or share your information with anyone else, including employers, unless you ask us to or the law requires it.</p>
+
+  <h2>Sending information between countries</h2>
+  <p>Rootline works across the UK and Nigeria, so your information may be seen by volunteers in either country. Our service providers may also store it in the UK, the European Union or the United States. Where information leaves the UK or Nigeria, we rely on legal safeguards: the providers' standard contractual clauses, the UK's adequacy rules, and, for information from Nigeria, the transfer conditions in the Nigeria Data Protection Act, including your consent when you apply.</p>
+
+  <h2>How long we keep it</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Information</th><th>How long</th></tr></thead>
+    <tbody>
+      <tr><td>Applications that don't get a place</td><td>12 months after the cohort ends, so we can tell you about the next cohort, then deleted</td></tr>
+      <tr><td>Programme records for mentees and mentors</td><td>2 years after the cohort ends</td></tr>
+      <tr><td>Certificate register: name, track, date and certificate ID</td><td>For as long as Rootline exists, so employers can check certificates. Ask us to remove yours at any time.</td></tr>
+      <tr><td>Job outcome follow-ups and testimonials</td><td>Until you withdraw your consent, or 3 years after the cohort ends</td></tr>
+      <tr><td>Emails</td><td>2 years after the conversation ends</td></tr>
+      <tr><td>Concerns raised under the code of conduct</td><td>6 years</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Keeping it safe</h2>
+  <ul>
+    <li>Only committee members and the volunteers who need it can open our records.</li>
+    <li>Rootline's accounts use strong passwords and two-step verification.</li>
+    <li>Volunteers must not copy applicants' information to personal devices or share it outside Rootline.</li>
+    <li>If something goes wrong with your information, we will tell you and, where the law requires it, the regulator.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Under UK and Nigerian law you can ask us to:</p>
+  <ul>
+    <li>give you a copy of your information</li>
+    <li>correct anything that is wrong</li>
+    <li>delete your information</li>
+    <li>stop or limit how we use it, or object to our use of it</li>
+    <li>send it to you, or to someone else, in a common format</li>
+    <li>withdraw any consent you gave, at any time. This doesn't affect anything we did before.</li>
+  </ul>
+  <p>Email <strong>privacy@rootline.org.uk</strong>. It's free, and we will reply within one month.</p>
+
+  <h2>Complaints</h2>
+  <p>Please tell us first and we will try to put it right. You can also complain to a regulator:</p>
+  <ul>
+    <li><strong>UK:</strong> the Information Commissioner's Office, <a href="https://ico.org.uk/make-a-complaint/" rel="noopener">ico.org.uk/make-a-complaint</a></li>
+    <li><strong>Nigeria:</strong> the Nigeria Data Protection Commission, <a href="https://ndpc.gov.ng" rel="noopener">ndpc.gov.ng</a></li>
+  </ul>
+
+  <h2>Age</h2>
+  <p>Rootline is for people aged 18 and over. We do not knowingly collect information about anyone under 18. If we find we have, we delete it.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we change this policy, we will update the date at the top. If a change affects how we use information you've already given us, we will email you first.</p>
+</main>
+<footer><div><a href="/">Home</a><a href="conduct.html">Code of conduct</a><span>© 2026 Rootline</span></div></footer>
+</body>
+</html>

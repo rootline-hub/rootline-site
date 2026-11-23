@@ -1,178 +1,245 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Rootline</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rootline · Free tech mentorship for the UK and Nigeria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Rootline is a free, volunteer-run digital tech mentorship hub for people in the UK and Nigeria. Cohort 1 runs 7 Dec 2026 to 26 Feb 2027.">
+<meta name="description" content="Rootline is a free, volunteer-run digital tech mentorship hub for people in the UK and Nigeria. Ten weeks, one mentor, one real project. Cohort 1 runs 4 Jan to 12 Mar 2027.">
+<meta name="theme-color" content="#0A7A47">
+<link rel="canonical" href="https://rootline.org.uk/">
 <meta property="og:title" content="Rootline · Free tech mentorship for the UK and Nigeria">
-<meta property="og:description" content="10 weeks, one mentor, one real project. Applications for cohort 1 open 20 November 2026.">
+<meta property="og:description" content="Ten weeks, one mentor, one real project. Applications for cohort 1 open 3 December 2026.">
 <meta property="og:url" content="https://rootline.org.uk/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 2v13' stroke='%230A7A47' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9' stroke='%230A7A47' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='13' cy='4' r='3' fill='%230A7A47'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a single vertical "root line" runs down the left of every section; content branches off it. */
+/* Layout: one vertical "root line" runs down the left of every section and fills as you scroll; content branches off it. */
 :root{
-  --ground:#F4F7F3;      /* page, faint green bias */
+  --ground:#F4F7F3;
+  --ground-2:#EAF1EC;
   --surface:#FFFFFF;
-  --ink:#10231A;         /* deep green-black text */
-  --muted:#4E6258;
+  --ink:#10231A;
+  --muted:#4A5E54;
   --line:#D3DDD6;
-  --root:#0A7A47;        /* accent: Nigerian green */
+  --root:#0A7A47;
+  --root-ink:#086339;
   --root-soft:#DDEFE4;
-  --sky:#1F3B73;         /* secondary: UK navy, used sparingly */
   --on-root:#FFFFFF;
+  --shadow:0 1px 2px rgba(16,35,26,.06), 0 8px 24px -12px rgba(16,35,26,.18);
+  --shadow-lift:0 2px 4px rgba(16,35,26,.06), 0 18px 36px -16px rgba(16,35,26,.28);
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body:"Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
   --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --s-1:.8125rem; --s0:1rem; --s1:1.1875rem; --s2:1.5rem; --s3:2.125rem; --s4:clamp(2.5rem,6vw,4.25rem);
-  --radius:10px;
+  --t-xs:.8125rem; --t-sm:.9375rem; --t-base:1.0625rem; --t-md:1.25rem; --t-lg:1.625rem; --t-xl:clamp(1.9rem, 3.6vw, 2.6rem); --t-hero:clamp(2.6rem, 6.4vw, 4.75rem);
+  --radius:14px;
+  --gap:clamp(56px, 8vw, 104px);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#0D1612; --surface:#14211B; --ink:#E6F0EA; --muted:#9DB2A7; --line:#26382F;
-    --root:#3FBF7F; --root-soft:#163A28; --sky:#8FB0F0; --on-root:#06140D; color-scheme:dark;
+    --ground:#0C1511; --ground-2:#101C16; --surface:#13201A; --ink:#E6F0EA; --muted:#A3B6AC; --line:#25362D;
+    --root:#41C183; --root-ink:#6AD7A0; --root-soft:#15382A; --on-root:#05140C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.4), 0 20px 40px -16px rgba(0,0,0,.8);
+    color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#0D1612; --surface:#14211B; --ink:#E6F0EA; --muted:#9DB2A7; --line:#26382F;
-  --root:#3FBF7F; --root-soft:#163A28; --sky:#8FB0F0; --on-root:#06140D; color-scheme:dark;
+  --ground:#0C1511; --ground-2:#101C16; --surface:#13201A; --ink:#E6F0EA; --muted:#A3B6AC; --line:#25362D;
+  --root:#41C183; --root-ink:#6AD7A0; --root-soft:#15382A; --on-root:#05140C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  --shadow-lift:0 2px 4px rgba(0,0,0,.4), 0 20px 40px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.6;
-  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--ground)}
-a{color:var(--root);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--root);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
-h2{font-size:var(--s3);font-weight:800;letter-spacing:-.01em}
-h3{font-size:var(--s1);font-weight:700}
+
+*,*::before,*::after{box-sizing:border-box}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+html{scroll-padding-top:84px;overflow-x:clip}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:var(--t-base);line-height:1.65;-webkit-font-smoothing:antialiased;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--ground)}
+a{color:var(--root-ink);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--root);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.08;text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:var(--t-xl);font-weight:800;letter-spacing:-.025em}
+h3{font-size:var(--t-md);font-weight:700;letter-spacing:-.01em}
 p{margin:0}
-.wrap{max-width:1080px;margin:0 auto}
-.label{font-family:var(--f-mono);font-size:var(--s-1);letter-spacing:.06em;text-transform:uppercase;color:var(--root)}
+.wrap{max-width:1120px;margin:0 auto}
+.label{font-family:var(--f-mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--root-ink)}
+.skip{position:absolute;left:16px;top:-60px;z-index:50;background:var(--ink);color:var(--ground);padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(12px + env(safe-area-inset-top, 0px))}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* header */
-header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--ground) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-inline:max(16px, env(safe-area-inset-left, 0px))}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none}
-.logo svg{width:26px;height:26px}
-nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:.9375rem}
-nav a:hover{color:var(--ink)}
-@media (max-width:760px){nav{display:none}}
+/* ---------- header ---------- */
+.site-head{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:color-mix(in srgb, var(--ground) 86%, transparent);-webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  margin-left:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));margin-right:calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.bar{display:flex;align-items:center;gap:28px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;margin-right:auto}
+.logo svg{width:26px;height:26px;flex:none}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav a{display:block;color:var(--muted);text-decoration:none;font-size:var(--t-sm);font-weight:500;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--ink);background:var(--ground-2)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;display:grid;place-items:center;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary svg{width:20px;height:20px}
+.menu[open] summary{border-color:var(--root)}
+.menu ul{position:absolute;right:0;top:52px;min-width:220px;list-style:none;margin:0;padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-lift)}
+.menu a{display:block;padding:11px 14px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:500}
+.menu a:hover{background:var(--ground-2)}
+@media (max-width:860px){.nav{display:none}.menu{display:block}.bar{gap:10px}}
 
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 .9375rem/1 var(--f-body);padding:13px 18px;border-radius:999px;text-decoration:none;border:1.5px solid var(--root);cursor:pointer}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;font:600 var(--t-sm)/1 var(--f-body);padding:0 22px;border-radius:999px;text-decoration:none;border:1.5px solid var(--root);cursor:pointer;
+  transition:transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s, background-color .2s, color .2s}
 .btn-solid{background:var(--root);color:var(--on-root)}
-.btn-solid:hover{filter:brightness(1.08)}
-.btn-ghost{background:transparent;color:var(--root)}
+.btn-solid:hover{background:var(--root-ink);border-color:var(--root-ink);color:var(--on-root)}
+.btn-ghost{background:transparent;color:var(--root-ink)}
 .btn-ghost:hover{background:var(--root-soft)}
-.btn[aria-disabled="true"]{background:var(--line);border-color:var(--line);color:var(--muted);pointer-events:none}
-.btn-sm{padding:9px 14px;font-size:.875rem}
+.btn .arrow{transition:transform .25s}
+.btn[aria-disabled="true"]{background:var(--ground-2);border-color:var(--line);color:var(--muted);pointer-events:none;box-shadow:none}
+.btn-sm{min-height:40px;padding:0 16px;font-size:.875rem}
+@media (hover:hover) and (prefers-reduced-motion: no-preference){
+  .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn:hover .arrow{transform:translateX(3px)}
+  .btn:active{transform:translateY(0)}
+}
 
-/* the root line */
-main{position:relative}
-.rooted{position:relative;padding-left:40px}
-.rooted::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--root);opacity:.35}
-.node{position:absolute;left:4px;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--ground);border:3px solid var(--root)}
-@media (max-width:520px){.rooted{padding-left:28px}.rooted::before{left:6px}.node{left:0;width:14px;height:14px}}
-
-section{padding-block:64px;border-top:1px solid var(--line)}
-section:first-of-type{border-top:0}
-.sec-head{display:grid;gap:10px;max-width:62ch;margin-bottom:32px;position:relative}
-.sec-head p{color:var(--muted);font-size:var(--s1)}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;padding-block:56px 64px}
-@media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}}
-.hero h1{font-size:var(--s4);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+/* ---------- hero ---------- */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center;padding-block:clamp(48px,8vw,96px) clamp(56px,8vw,96px)}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-10% 0 0 auto;width:70%;pointer-events:none;
+  background:radial-gradient(closest-side, color-mix(in srgb, var(--root) 14%, transparent), transparent 70%)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero::before{width:100%;inset:-10% 0 auto auto;height:60%}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);box-shadow:var(--shadow)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--root);box-shadow:0 0 0 4px var(--root-soft);flex:none}
+@media (max-width:420px){.eyebrow{font-size:.6875rem;letter-spacing:.04em;padding:6px 12px 6px 10px}}
+.hero h1{font-size:var(--t-hero);font-weight:800;letter-spacing:-.04em;line-height:.98;margin-top:22px}
+.hero h1 .line{display:block}
 .hero h1 em{font-style:normal;color:var(--root)}
-.hero .lede{font-size:var(--s1);color:var(--muted);max-width:56ch;margin-top:18px}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.status{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted);margin-top:14px}
+.lede{font-size:var(--t-md);line-height:1.55;color:var(--muted);max-width:52ch;margin-top:22px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.status{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted);margin-top:18px}
 .status b{color:var(--ink);font-weight:500}
-.glance{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-.glance dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:14px 0 0}
-.glance dt{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+
+.glance{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3vw,28px);box-shadow:var(--shadow-lift);min-width:0}
+.glance-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.glance-head .free{font-family:var(--f-mono);font-size:.75rem;font-weight:500;color:var(--root-ink);background:var(--root-soft);padding:4px 10px;border-radius:999px}
+.glance dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 20px;margin:16px 0 0}
+.glance dt{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:3px}
 .glance dd{margin:0;font-weight:500;font-variant-numeric:tabular-nums}
-.tz{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted)}
-.tz span b{color:var(--ink);font-weight:500}
+.tz{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted)}
+.tz b{color:var(--ink);font-weight:500}
+
+/* ---------- the root line ---------- */
+.rooted{position:relative;padding-left:56px}
+.rail{position:absolute;left:15px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.rail-fill{position:absolute;inset:0;background:var(--root);transform-origin:50% 0}
+.node{position:absolute;left:-48px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--ground);border:3px solid var(--root);transition:background-color .3s}
+.node.lit{background:var(--root);box-shadow:0 0 0 5px var(--root-soft)}
+@media (max-width:560px){.rooted{padding-left:30px}.rail{left:5px}.node{left:-31px;width:16px;height:16px}}
+
+.sec{position:relative;padding-block:var(--gap);border-top:1px solid var(--line)}
+.sec:first-of-type{border-top:0;padding-top:clamp(24px,4vw,48px)}
+.sec-head{display:grid;gap:12px;max-width:64ch;margin-bottom:clamp(28px,4vw,44px);position:relative}
+.sec-head p{color:var(--muted);font-size:var(--t-md);line-height:1.55}
 
 /* mission */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-@media (max-width:760px){.two{grid-template-columns:1fr}}
-.two > div{display:grid;gap:10px;align-content:start;min-width:0}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.two > div{display:grid;gap:14px;min-width:0}
 .two p{color:var(--muted)}
-.pull{font-family:var(--f-display);font-size:var(--s2);font-weight:700;line-height:1.25;color:var(--ink)!important;max-width:30ch}
+.pull{font-family:var(--f-display);font-size:var(--t-lg);font-weight:700;line-height:1.25;letter-spacing:-.015em;color:var(--ink)!important;max-width:28ch;padding-left:20px;border-left:3px solid var(--root)}
+
+/* card base + hover lift */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s, border-color .3s}
+@media (hover:hover) and (prefers-reduced-motion: no-preference){
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:color-mix(in srgb, var(--root) 40%, var(--line))}
+}
 
 /* steps */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
-@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}}
-.steps li{counter-increment:step;display:grid;gap:8px;align-content:start;padding-top:16px;border-top:2px solid var(--root)}
-.steps li::before{content:"Step " counter(step);font-family:var(--f-mono);font-size:var(--s-1);color:var(--root);letter-spacing:.05em;text-transform:uppercase}
-.steps p{color:var(--muted);font-size:.9375rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:step}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:step;display:grid;gap:10px;align-content:start;padding:22px}
+.steps li::before{content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--root-soft);color:var(--root-ink);font-family:var(--f-mono);font-size:.875rem;font-weight:500;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:var(--t-sm)}
 
 /* tracks */
-.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media (max-width:860px){.tracks{grid-template-columns:1fr}}
-.track{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:12px;align-content:start}
-.track .eg{font-family:var(--f-mono);font-size:var(--s-1);color:var(--muted)}
-.track ul{margin:0;padding-left:18px;color:var(--muted);font-size:.9375rem;display:grid;gap:4px}
-.track .cap{font-size:.9375rem;border-top:1px solid var(--line);padding-top:12px}
-.track .cap b{font-weight:600}
-.note{margin-top:18px;color:var(--muted);font-size:.9375rem}
+.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.tracks{grid-template-columns:1fr}}
+.track{padding:24px;display:grid;gap:14px;align-content:start;min-width:0}
+.track-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.track .eg{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.track ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:var(--t-sm);color:var(--muted)}
+.track li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px}
+.track li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--root);opacity:.55;margin-top:9px}
+.track .cap{font-size:var(--t-sm);border-top:1px solid var(--line);padding-top:14px;color:var(--ink)}
+.track .cap b{display:block;font-family:var(--f-mono);font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--root-ink);margin-bottom:4px}
+.note{margin-top:20px;color:var(--muted);font-size:var(--t-sm)}
 
 /* timeline */
-.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.tl li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding-block:14px;border-bottom:1px solid var(--line)}
-.tl li:last-child{border-bottom:0}
-@media (max-width:560px){.tl li{grid-template-columns:1fr;gap:2px}}
-.tl time{font-family:var(--f-mono);font-size:.875rem;color:var(--root);font-variant-numeric:tabular-nums;padding-top:2px}
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.tl li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;padding-block:18px;border-bottom:1px solid var(--line);align-items:baseline}
+@media (max-width:600px){.tl li{grid-template-columns:1fr;gap:4px}}
+.tl time{font-family:var(--f-mono);font-size:.875rem;font-weight:500;color:var(--root-ink);font-variant-numeric:tabular-nums}
 .tl .what{font-weight:600}
-.tl .why{color:var(--muted);font-size:.9375rem}
+.tl .why{color:var(--muted);font-size:var(--t-sm);margin-top:2px}
+.tl li.key .what{font-family:var(--f-display);font-size:var(--t-md);font-weight:700;letter-spacing:-.01em}
+.tl li.break{background:repeating-linear-gradient(135deg, transparent 0 10px, var(--ground-2) 10px 11px)}
 .tl li.break .what,.tl li.break time{color:var(--muted)}
-.tl li.key .what{font-family:var(--f-display);font-size:var(--s1)}
+.tl li.finale .what::after{content:"Graduation";margin-left:10px;vertical-align:3px;font-family:var(--f-mono);font-size:.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--on-root);background:var(--root);padding:3px 8px;border-radius:999px}
 
 /* apply panels */
-.panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:860px){.panels{grid-template-columns:1fr}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:16px;align-content:start;min-width:0}
-.panel.lead{border-color:var(--root);box-shadow:0 0 0 1px var(--root) inset}
-.panel h3{font-size:var(--s2)}
-.panel h4{margin:0;font-family:var(--f-mono);font-size:var(--s-1);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
-.panel ul{margin:0;padding-left:18px;display:grid;gap:5px}
-.panel .small{font-size:.875rem;color:var(--muted)}
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.panels{grid-template-columns:1fr}}
+.panel{padding:clamp(22px,3vw,32px);display:grid;gap:20px;align-content:start;min-width:0}
+.panel.lead{border:2px solid var(--root)}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.panel h3{font-size:var(--t-lg);font-weight:800;letter-spacing:-.02em}
+.pill{font-family:var(--f-mono);font-size:.75rem;font-weight:500;padding:5px 10px;border-radius:999px;background:var(--root-soft);color:var(--root-ink);white-space:nowrap}
+.panel h4{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;margin-bottom:8px}
+.panel ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.panel li::marker{color:var(--root)}
+.panel .small{font-size:var(--t-xs);color:var(--muted)}
+.panel .cta-row{margin-top:4px}
 
-/* faq + contact */
-details{border-bottom:1px solid var(--line);padding-block:14px}
-summary{cursor:pointer;font-weight:600;list-style-position:outside}
-details p{color:var(--muted);margin-top:8px;max-width:70ch}
-.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px}
-.email{font-family:var(--f-mono);font-size:var(--s1);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;user-select:all;overflow-wrap:anywhere}
-.copied{font-size:.875rem;color:var(--root);min-height:1.2em}
+/* faq */
+.faq{border-top:1px solid var(--ink);max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:20px;font-weight:600;font-size:var(--t-base)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .plus{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--root-ink);transition:transform .3s, background-color .2s}
+.faq summary:hover .plus{background:var(--root-soft)}
+.faq details[open] .plus{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding-bottom:22px;max-width:68ch}
 
-footer{border-top:1px solid var(--line);padding-block:32px 48px;color:var(--muted);font-size:.875rem}
-footer .wrap{display:grid;gap:12px}
-footer .links{display:flex;flex-wrap:wrap;gap:8px 20px}
-footer a{color:var(--muted)}
+/* contact */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email{font-family:var(--f-mono);font-size:var(--t-md);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;user-select:all;overflow-wrap:anywhere;box-shadow:var(--shadow)}
+.copied{font-size:var(--t-sm);color:var(--root-ink);min-height:1.2em}
+
+/* footer */
+.site-foot{border-top:1px solid var(--line);margin-top:24px;padding-block:40px 56px;color:var(--muted);font-size:var(--t-sm)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:720px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid p{max-width:58ch}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:flex-end}
+@media (max-width:720px){.foot-links{justify-content:flex-start}}
+.foot-links a{color:var(--muted)}
+.foot-links a:hover{color:var(--ink)}
+.foot-base{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:.75rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
-</head>
-<body>
 
-<header>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
   <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="Rootline home">
-      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v13" stroke="var(--root)" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9" stroke="var(--root)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="13" cy="4" r="3" fill="var(--root)"/></svg>
+    <a class="logo" href="#top" aria-label="Rootline, back to top">
+      <svg viewBox="0 0 26 26" aria-hidden="true" focusable="false"><path d="M13 2v13" stroke="var(--root)" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M13 15c0 4-4 5-7 9M13 15c0 4 4 5 7 9M13 15v9" stroke="var(--root)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="13" cy="4" r="3" fill="var(--root)"/></svg>
       Rootline
     </a>
-    <nav aria-label="Sections">
+    <nav class="nav" aria-label="Main">
       <ul>
         <li><a href="#how">How it works</a></li>
         <li><a href="#tracks">Tracks</a></li>
@@ -182,34 +249,49 @@ footer a{color:var(--muted)}
       </ul>
     </nav>
     <a class="btn btn-solid btn-sm" href="#apply">Apply</a>
+    <details class="menu">
+      <summary aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></summary>
+      <nav aria-label="Mobile">
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#apply">Apply or volunteer</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
 </header>
 
-<main id="top" class="wrap">
+<main id="main" class="wrap">
 
   <!-- HERO -->
-  <section class="hero" aria-labelledby="h-hero">
+  <section class="hero" id="top" aria-labelledby="h-hero">
     <div>
-      <span class="label">Free mentorship · UK &amp; Nigeria · Cohort 1</span>
-      <h1 id="h-hero">From first project to <em>first tech job.</em></h1>
+      <span class="eyebrow label"><span class="dot" aria-hidden="true"></span>Free mentorship · UK &amp; Nigeria · Cohort 1</span>
+      <h1 id="h-hero"><span class="line">From first project</span> <span class="line">to <em>first tech job.</em></span></h1>
       <p class="lede">Rootline pairs people breaking into digital tech with professionals already doing the work. Ten weeks, one mentor, one real project to show employers. It's run by volunteers and it's free.</p>
       <div class="cta-row">
         <a class="btn btn-solid js-mentee-btn" href="#apply">Apply as a mentee</a>
-        <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor</a>
+        <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor <span class="arrow" aria-hidden="true">→</span></a>
       </div>
-      <p class="status js-status">Mentee applications open <b>20 November 2026</b> and close <b>30 November</b>.</p>
+      <p class="status js-status">Mentee applications open <b>3 December 2026</b> and close <b>15 December</b>.</p>
     </div>
-    <aside class="glance" aria-label="Cohort 1 at a glance">
-      <span class="label">Cohort 1 at a glance</span>
+    <aside class="glance" aria-labelledby="h-glance">
+      <div class="glance-head">
+        <h2 id="h-glance" class="label">Cohort 1 at a glance</h2>
+        <span class="free">£0 · always</span>
+      </div>
       <dl>
-        <dt>Runs</dt><dd>7 Dec 2026 – 26 Feb 2027</dd>
+        <dt>Runs</dt><dd>4 Jan – 12 Mar 2027</dd>
         <dt>Length</dt><dd>10 teaching weeks</dd>
         <dt>Time</dt><dd>About 1 hour a week</dd>
         <dt>Places</dt><dd>10 mentees, 5 mentors</dd>
         <dt>Tracks</dt><dd>Data · Software · Product &amp; design</dd>
         <dt>Format</dt><dd>Online, async-first</dd>
         <dt>Outcome</dt><dd>Capstone project + certificate</dd>
-        <dt>Cost</dt><dd>Free, always</dd>
       </dl>
       <div class="tz" aria-label="Time zones">
         <span>London <b>GMT</b></span><span>Lagos <b>WAT</b> (+1h)</span>
@@ -218,19 +300,20 @@ footer a{color:var(--muted)}
   </section>
 
   <div class="rooted">
+    <div class="rail" aria-hidden="true"><div class="rail-fill"></div></div>
 
   <!-- MISSION -->
-  <section id="mission" aria-labelledby="h-mission">
+  <section class="sec" id="mission" aria-labelledby="h-mission">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Why Rootline</span>
       <h2 id="h-mission">Courses teach tools. People get you hired.</h2>
     </div>
     <div class="two">
-      <div>
+      <div class="reveal">
         <p class="pull">Our mission is to give trainees a structured path from first project to first tech job, guided by people already doing the work.</p>
       </div>
-      <div>
+      <div class="reveal">
         <p>Entry-level tech roles are hard to break into. Plenty of free courses teach the tools, but most people starting out still lack three things: someone to guide them, real project experience, and a way to show employers what they can do.</p>
         <p>Rootline gives you all three. You follow a track in your discipline, talk with a working professional every fortnight, and build a capstone project that you present at our online demo day.</p>
       </div>
@@ -238,85 +321,80 @@ footer a{color:var(--muted)}
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how" aria-labelledby="h-how">
+  <section class="sec" id="how" aria-labelledby="h-how">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">How it works</span>
       <h2 id="h-how">Four steps, ten weeks</h2>
     </div>
     <ol class="steps">
-      <li><h3>Apply</h3><p>Fill in a short form between 20 and 30 November. Tell us your track, your goals and what you've learned so far.</p></li>
-      <li><h3>Have a short interview</h3><p>Shortlisted applicants have a 20-minute video call with one of our mentors between 1 and 3 December. It's a friendly chat about your goals, not a technical test.</p></li>
-      <li><h3>Get matched</h3><p>We match you by hand with a mentor in your field, based on your goals, availability and time zone.</p></li>
-      <li><h3>Build and graduate</h3><p>Fortnightly calls with your mentor, a group chat for questions, and a capstone project you present at our online demo day. Graduates receive a certificate of completion.</p></li>
+      <li class="card reveal"><h3>Apply</h3><p>Fill in a short form between 3 and 15 December. Tell us your track, your goals and what you've learned so far.</p></li>
+      <li class="card reveal"><h3>Have a short interview</h3><p>Shortlisted applicants have a 20-minute video call with one of our mentors between 16 and 18 December. It's a friendly chat about your goals, not a technical test.</p></li>
+      <li class="card reveal"><h3>Get matched</h3><p>We match you by hand with a mentor in your field, based on your goals, availability and time zone.</p></li>
+      <li class="card reveal"><h3>Build and graduate</h3><p>Fortnightly calls with your mentor, a group chat for questions, and a capstone project you present at our online demo day. Graduates receive a certificate of completion.</p></li>
     </ol>
   </section>
 
   <!-- TRACKS -->
-  <section id="tracks" aria-labelledby="h-tracks">
+  <section class="sec" id="tracks" aria-labelledby="h-tracks">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Tracks</span>
       <h2 id="h-tracks">Pick your discipline</h2>
       <p>Every track follows the same shape: foundations, core tools, guided practice, then a capstone. The learning material is the best free content we can find, chosen by our mentors.</p>
     </div>
     <div class="tracks">
-      <article class="track">
-        <span class="label">Track</span>
-        <h3>Data</h3>
-        <span class="eg">Data engineering · analytics</span>
+      <article class="track card reveal" aria-labelledby="h-t1">
+        <div class="track-top"><h3 id="h-t1">Data</h3><span class="eg">Data engineering · analytics</span></div>
         <ul><li>SQL and data modelling</li><li>Python for data</li><li>Pipelines and cloud basics</li><li>Dashboards and storytelling</li></ul>
-        <p class="cap"><b>Capstone:</b> a working data pipeline or analysis, published on GitHub.</p>
+        <p class="cap"><b>Capstone</b>A working data pipeline or analysis, published on GitHub.</p>
       </article>
-      <article class="track">
-        <span class="label">Track</span>
-        <h3>Software engineering</h3>
-        <span class="eg">Web · backend</span>
+      <article class="track card reveal" aria-labelledby="h-t2">
+        <div class="track-top"><h3 id="h-t2">Software engineering</h3><span class="eg">Web · backend</span></div>
         <ul><li>Git and the command line</li><li>Web fundamentals</li><li>Building and testing an API</li><li>Deploying your app</li></ul>
-        <p class="cap"><b>Capstone:</b> a deployed web app with its code on GitHub.</p>
+        <p class="cap"><b>Capstone</b>A deployed web app with its code on GitHub.</p>
       </article>
-      <article class="track">
-        <span class="label">Track</span>
-        <h3>Product &amp; design</h3>
-        <span class="eg">Product management · UX/UI</span>
+      <article class="track card reveal" aria-labelledby="h-t3">
+        <div class="track-top"><h3 id="h-t3">Product &amp; design</h3><span class="eg">Product management · UX/UI</span></div>
         <ul><li>User research and problem framing</li><li>Prioritisation and roadmaps</li><li>Wireframes and prototypes</li><li>Testing with real users</li></ul>
-        <p class="cap"><b>Capstone:</b> a product case study or prototype on a portfolio page.</p>
+        <p class="cap"><b>Capstone</b>A product case study or prototype on a portfolio page.</p>
       </article>
     </div>
-    <p class="note">More tracks, such as cloud, cyber security and AI, will open as mentors join.</p>
+    <p class="note reveal">More tracks, such as cloud, cyber security and AI, will open as mentors join.</p>
   </section>
 
   <!-- TIMELINE -->
-  <section id="timeline" aria-labelledby="h-timeline">
+  <section class="sec" id="timeline" aria-labelledby="h-timeline">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Timeline</span>
       <h2 id="h-timeline">Cohort 1 dates</h2>
+      <p>All times are UK time. Lagos is one hour ahead.</p>
     </div>
     <ol class="tl">
-      <li><time datetime="2026-11-20">20 Nov 2026</time><div><div class="what">Applications open</div><div class="why">Mentee and mentor forms go live.</div></div></li>
-      <li><time datetime="2026-11-30">30 Nov 2026</time><div><div class="what">Applications close</div><div class="why">Midnight UK time (1am in Lagos).</div></div></li>
-      <li><time datetime="2026-12-01">1–3 Dec 2026</time><div><div class="what">Interviews</div><div class="why">20-minute video calls with shortlisted applicants.</div></div></li>
-      <li><time datetime="2026-12-04">by 4 Dec 2026</time><div><div class="what">Places offered</div><div class="why">Everyone who applied hears back by email.</div></div></li>
-      <li class="key"><time datetime="2026-12-07">7–18 Dec</time><div><div class="what">Weeks 1–2 · Foundations</div><div class="why">Meet your mentor and set your goals.</div></div></li>
-      <li class="break"><time datetime="2026-12-21">21 Dec – 3 Jan</time><div><div class="what">Christmas break</div><div class="why">No sessions. Rest, or catch up if you want to.</div></div></li>
-      <li class="key"><time datetime="2027-01-04">4–15 Jan</time><div><div class="what">Weeks 3–4 · Core tools and skills</div></div></li>
-      <li class="key"><time datetime="2027-01-18">18–29 Jan</time><div><div class="what">Weeks 5–6 · Applied practice</div><div class="why">A guided exercise in your track.</div></div></li>
-      <li class="key"><time datetime="2027-02-01">1–26 Feb</time><div><div class="what">Weeks 7–10 · Capstone project</div></div></li>
-      <li class="key"><time datetime="2027-02-26">26 Feb 2027</time><div><div class="what">Online demo day</div><div class="why">Mentees present their projects and receive their certificates. This is graduation.</div></div></li>
+      <li class="reveal"><time datetime="2026-12-03">3 Dec 2026</time><div><div class="what">Applications open</div><div class="why">The mentee form goes live. Mentor applications are open now.</div></div></li>
+      <li class="reveal"><time datetime="2026-12-15">15 Dec 2026</time><div><div class="what">Applications close</div><div class="why">Midnight UK time (1am in Lagos).</div></div></li>
+      <li class="reveal"><time datetime="2026-12-16">16–18 Dec 2026</time><div><div class="what">Interviews</div><div class="why">20-minute video calls with shortlisted applicants.</div></div></li>
+      <li class="reveal"><time datetime="2026-12-19">by 19 Dec 2026</time><div><div class="what">Places offered</div><div class="why">Everyone who applied hears back by email.</div></div></li>
+      <li class="break reveal"><time datetime="2026-12-21">21 Dec – 3 Jan</time><div><div class="what">Christmas break</div><div class="why">No sessions. A chance to get set up before we start.</div></div></li>
+      <li class="key reveal"><time datetime="2027-01-04">4–15 Jan 2027</time><div><div class="what">Weeks 1–2 · Foundations</div><div class="why">Meet your mentor and set your goals.</div></div></li>
+      <li class="key reveal"><time datetime="2027-01-18">18–29 Jan</time><div><div class="what">Weeks 3–4 · Core tools and skills</div></div></li>
+      <li class="key reveal"><time datetime="2027-02-01">1–12 Feb</time><div><div class="what">Weeks 5–6 · Applied practice</div><div class="why">A guided exercise in your track.</div></div></li>
+      <li class="key reveal"><time datetime="2027-02-15">15 Feb – 12 Mar</time><div><div class="what">Weeks 7–10 · Capstone project</div></div></li>
+      <li class="key finale reveal"><time datetime="2027-03-12">12 Mar 2027</time><div><div class="what">Online demo day</div><div class="why">Mentees present their projects and receive their certificates.</div></div></li>
     </ol>
   </section>
 
   <!-- APPLY -->
-  <section id="apply" aria-labelledby="h-apply">
+  <section class="sec" id="apply" aria-labelledby="h-apply">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Join cohort 1</span>
       <h2 id="h-apply">Apply or volunteer</h2>
     </div>
     <div class="panels">
-      <article class="panel lead" aria-labelledby="h-mentee">
-        <h3 id="h-mentee">Apply as a mentee</h3>
+      <article class="panel card lead reveal" aria-labelledby="h-mentee">
+        <div class="panel-head"><h3 id="h-mentee">Apply as a mentee</h3><span class="pill">10 places · free</span></div>
         <div>
           <h4>Who can apply</h4>
           <ul>
@@ -330,7 +408,7 @@ footer a{color:var(--muted)}
           <ul>
             <li>About 1 hour a week for 10 weeks</li>
             <li>A 30-minute call with your mentor every two weeks</li>
-            <li>A capstone project, shown at demo day on 26 Feb</li>
+            <li>A capstone project, shown at demo day on 12 Mar</li>
           </ul>
         </div>
         <div>
@@ -341,14 +419,14 @@ footer a{color:var(--muted)}
             <li>A Rootline certificate of completion</li>
           </ul>
         </div>
-        <div class="cta-row" style="margin-top:4px">
+        <div class="cta-row">
           <a class="btn btn-solid js-mentee-btn" href="#apply">Apply as a mentee</a>
         </div>
-        <p class="small js-mentee-note">Applications open 20 November. There are 10 places, and it's free.</p>
+        <p class="small js-mentee-note">Applications open 3 December. There are 10 places, and it's free.</p>
       </article>
 
-      <article class="panel" id="mentor" aria-labelledby="h-mentor">
-        <h3 id="h-mentor">Become a mentor</h3>
+      <article class="panel card reveal" id="mentor" aria-labelledby="h-mentor">
+        <div class="panel-head"><h3 id="h-mentor">Become a mentor</h3><span class="pill">Volunteer</span></div>
         <div>
           <h4>Who we're looking for</h4>
           <ul>
@@ -361,12 +439,12 @@ footer a{color:var(--muted)}
           <h4>What you give</h4>
           <ul>
             <li>About 1 hour every two weeks: a 30-minute call with each of your 2 mentees</li>
-            <li>A few short interviews with applicants, 1–3 December</li>
+            <li>A few short interviews with applicants, 16–18 December</li>
             <li>Quick answers in the group chat, and feedback on capstone projects</li>
           </ul>
         </div>
-        <div class="cta-row" style="margin-top:4px">
-          <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor</a>
+        <div class="cta-row">
+          <a class="btn btn-ghost js-mentor-btn" href="#mentor">Become a mentor <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <p class="small">Mentoring is voluntary and unpaid. You'll get a one-page mentor guide before you start.</p>
       </article>
@@ -374,64 +452,72 @@ footer a{color:var(--muted)}
   </section>
 
   <!-- FAQ -->
-  <section id="faq" aria-labelledby="h-faq">
+  <section class="sec" id="faq" aria-labelledby="h-faq">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Questions</span>
       <h2 id="h-faq">Good to know</h2>
     </div>
-    <details><summary>Does it really cost nothing?</summary><p>Yes. Rootline is run by volunteers, nobody is paid, and the programme and the learning material are free. We'll never ask you for money.</p></details>
-    <details><summary>What happens in the interview?</summary><p>It's a 20-minute video call with one of our mentors. We'll ask what you've learned so far, what you'd like to build and how much time you can give. It isn't a technical test, and there's nothing to prepare beyond thinking about your goals.</p></details>
-    <details><summary>Do I get a certificate?</summary><p>Yes. Mentees who complete the programme and present at demo day receive a Rootline certificate of completion with a unique ID that employers can check with us. It records what you did with Rootline. It isn't an accredited or regulated qualification.</p></details>
-    <details><summary>Can I be in Nigeria and have a UK mentor, or the other way round?</summary><p>Yes. We match across both countries. London and Lagos are only one hour apart, so calls are easy to arrange.</p></details>
-    <details><summary>What if my internet connection is unreliable?</summary><p>Rootline is async-first. Calls can be recorded, and most work happens in your own time, so you won't miss out if a call drops.</p></details>
-    <details><summary>I'm a complete beginner. Can I apply?</summary><p>Cohort 1 suits people who've already started learning, even a little. If you haven't started yet, pick a free course in your track and apply for cohort 2.</p></details>
-    <details><summary>What happens to my data?</summary><p>We only use your application to run the programme. Our privacy policy explains what we collect, how long we keep it and how to ask us to delete it.</p></details>
+    <div class="faq">
+      <details class="reveal"><summary>Does it really cost nothing?<span class="plus" aria-hidden="true">+</span></summary><p>Yes. Rootline is run by volunteers, nobody is paid, and the programme and the learning material are free. We'll never ask you for money.</p></details>
+      <details class="reveal"><summary>What happens in the interview?<span class="plus" aria-hidden="true">+</span></summary><p>It's a 20-minute video call with one of our mentors. We'll ask what you've learned so far, what you'd like to build and how much time you can give. It isn't a technical test, and there's nothing to prepare beyond thinking about your goals.</p></details>
+      <details class="reveal"><summary>Do I get a certificate?<span class="plus" aria-hidden="true">+</span></summary><p>Yes. Mentees who complete the programme and present at demo day receive a Rootline certificate of completion with a unique ID that employers can check with us. It records what you did with Rootline. It isn't an accredited or regulated qualification.</p></details>
+      <details class="reveal"><summary>Can I be in Nigeria and have a UK mentor, or the other way round?<span class="plus" aria-hidden="true">+</span></summary><p>Yes. We match across both countries. London and Lagos are only one hour apart, so calls are easy to arrange.</p></details>
+      <details class="reveal"><summary>What if my internet connection is unreliable?<span class="plus" aria-hidden="true">+</span></summary><p>Rootline is async-first. Calls can be recorded, and most work happens in your own time, so you won't miss out if a call drops.</p></details>
+      <details class="reveal"><summary>I'm a complete beginner. Can I apply?<span class="plus" aria-hidden="true">+</span></summary><p>Cohort 1 suits people who've already started learning, even a little. If you haven't started yet, pick a free course in your track and apply for cohort 2.</p></details>
+      <details class="reveal"><summary>What happens to my data?<span class="plus" aria-hidden="true">+</span></summary><p>We only use your application to run the programme. Our <a href="privacy.html">privacy policy</a> explains what we collect, how long we keep it and how to ask us to delete it.</p></details>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" aria-labelledby="h-contact">
+  <section class="sec" id="contact" aria-labelledby="h-contact">
     <span class="node" aria-hidden="true"></span>
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <span class="label">Contact</span>
       <h2 id="h-contact">Get in touch</h2>
       <p>Questions about applying, mentoring or partnering with us? Email us and a volunteer will reply within a few days.</p>
     </div>
-    <div class="contact">
+    <div class="contact reveal">
       <span class="email js-email">hello@rootline.org.uk</span>
       <button class="btn btn-ghost btn-sm" id="copy-email" type="button">Copy address</button>
-      <span class="copied js-copied" aria-live="polite"></span>
+      <span class="copied js-copied" role="status" aria-live="polite"></span>
     </div>
   </section>
 
   </div>
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
-    <div class="links">
-      <a class="js-coc" href="#contact">Code of conduct</a>
-      <a class="js-privacy" href="#contact">Privacy policy</a>
-      <a href="#contact">Raise a concern</a>
+    <div class="foot-grid">
+      <p>Rootline is a volunteer-run, not-for-profit voluntary association with educational purposes, advancing digital skills in the UK and Nigeria. Everything we offer is free.</p>
+      <nav class="foot-links" aria-label="Policies">
+        <a class="js-coc" href="conduct.html">Code of conduct</a>
+        <a class="js-privacy" href="privacy.html">Privacy policy</a>
+        <a href="conduct.html#concerns">Raise a concern</a>
+      </nav>
     </div>
-    <p>Rootline is a volunteer-run, not-for-profit voluntary association with educational purposes, advancing digital skills in the UK and Nigeria. Everything we offer is free.</p>
-    <p>© <span class="js-year">2026</span> Rootline</p>
+    <div class="foot-base"><span>© <span class="js-year">2026</span> Rootline</span><span>rootline.org.uk</span></div>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
 <script>
 /* ============ SETTINGS: the only part you need to edit ============ */
 const CONFIG = {
-  email: "hello@rootline.org.uk",          // your contact address
-  menteeFormUrl: "https://forms.gle/sNTdRUigbLQn4iNt8",   // mentee form (button goes live 20 Nov)
+  email: "hello@rootline.org.uk",
+  menteeFormUrl: "https://forms.gle/sNTdRUigbLQn4iNt8",   // mentee form (button goes live 3 Dec)
   mentorFormUrl: "https://forms.gle/xdDkuCKGq1yx1chr8",   // mentor form (live now)
-  codeOfConductUrl: "",                    // link added in step 4
-  privacyUrl: "",                          // link added in step 4
-  menteeOpens: "2026-11-20T00:00:00Z",
-  menteeCloses: "2026-11-30T23:59:59Z"
+  codeOfConductUrl: "conduct.html",
+  privacyUrl: "privacy.html",
+  menteeOpens: "2026-12-03T00:00:00Z",
+  menteeCloses: "2026-12-15T23:59:59Z"
 };
 /* ================================================================== */
 
+/* ---------- Content logic (works with or without GSAP) ---------- */
 (function(){
   const $ = (s) => document.querySelectorAll(s);
   const now = new Date();
@@ -439,7 +525,6 @@ const CONFIG = {
   const fmt = (d) => d.toLocaleDateString("en-GB",{day:"numeric",month:"long",timeZone:"Europe/London"});
   const ext = (a, url) => { a.href = url; a.target = "_blank"; a.rel = "noopener"; };
 
-  // Mentee buttons and status line follow the application window
   let menteeHref = "", menteeLabel = "Apply as a mentee", menteeOff = false;
   let status = `Mentee applications open <b>${fmt(opens)} 2026</b> and close <b>${fmt(closes)}</b>.`;
   let note = `Applications open ${fmt(opens)}. There are 10 places, and it's free.`;
@@ -463,20 +548,112 @@ const CONFIG = {
   $(".js-mentee-note").forEach(el => el.textContent = note);
 
   if (CONFIG.mentorFormUrl) $(".js-mentor-btn").forEach(a => ext(a, CONFIG.mentorFormUrl));
-  if (CONFIG.codeOfConductUrl) $(".js-coc").forEach(a => ext(a, CONFIG.codeOfConductUrl));
-  if (CONFIG.privacyUrl) $(".js-privacy").forEach(a => ext(a, CONFIG.privacyUrl));
+  if (CONFIG.codeOfConductUrl) $(".js-coc").forEach(a => a.href = CONFIG.codeOfConductUrl);
+  if (CONFIG.privacyUrl) $(".js-privacy").forEach(a => a.href = CONFIG.privacyUrl);
   $(".js-email").forEach(el => el.textContent = CONFIG.email);
   $(".js-year").forEach(el => el.textContent = now.getFullYear());
+
+  // Close the mobile menu after choosing a link
+  const menu = document.querySelector(".menu");
+  if (menu) menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.removeAttribute("open")));
 
   // Copy email
   document.getElementById("copy-email").addEventListener("click", () => {
     const msg = document.querySelector(".js-copied");
     const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.querySelector(".js-email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = "Selected. Press Ctrl+C or ⌘C to copy."; };
-    try {
-      navigator.clipboard.writeText(CONFIG.email).then(() => msg.textContent = "Copied", fallback);
-    } catch(e){ fallback(); }
+    try { navigator.clipboard.writeText(CONFIG.email).then(() => msg.textContent = "Copied", fallback); }
+    catch(e){ fallback(); }
   });
 })();
+
+/* ---------- Motion (GSAP). If GSAP fails to load, nothing is hidden. ---------- */
+(function(){
+  if (!window.gsap || !window.ScrollTrigger) return;
+  const plugins = [ScrollTrigger];
+  if (window.ScrollToPlugin) plugins.push(ScrollToPlugin);
+  gsap.registerPlugin(...plugins);
+
+  // GSAP drives anchor scrolling, so switch off CSS smooth scrolling to avoid a double ease
+  document.documentElement.style.scrollBehavior = "auto";
+
+  // Smooth anchor scrolling (instant when reduced motion is on)
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    const target = id.length > 1 ? document.querySelector(id) : null;
+    if (!target) return;
+    e.preventDefault();
+    const headH = document.querySelector(".site-head").offsetHeight + 12;
+    const focusIt = () => { if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex","-1"); target.focus({preventScroll:true}); };
+    if (reduce.matches || !window.ScrollToPlugin) {
+      window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - headH); focusIt();
+    } else {
+      gsap.to(window, { duration: 0.9, ease: "power3.inOut", scrollTo: { y: target, offsetY: headH, autoKill: true }, onComplete: focusIt });
+    }
+    history.replaceState(null, "", id);
+  });
+
+  const mm = gsap.matchMedia();
+  mm.add({
+    isDesktop: "(min-width: 761px) and (prefers-reduced-motion: no-preference)",
+    isMobile: "(max-width: 760px) and (prefers-reduced-motion: no-preference)"
+  }, (ctx) => {
+    const { isDesktop } = ctx.conditions;
+    const dist = isDesktop ? 32 : 18;
+    const dur = isDesktop ? 0.9 : 0.6;
+
+    /* Hero: one timeline, staggered */
+    const hero = gsap.timeline({ defaults: { ease: "power3.out", duration: dur } });
+    hero.from(".hero .eyebrow", { autoAlpha: 0, y: dist * 0.6 })
+        .from(".hero h1 .line", { autoAlpha: 0, y: dist * 1.4, stagger: 0.12 }, "-=0.55")
+        .from(".hero .lede", { autoAlpha: 0, y: dist }, "-=0.6")
+        .from(".hero .cta-row > *", { autoAlpha: 0, y: dist * 0.8, stagger: 0.08, clearProps: "transform" }, "-=0.6")
+        .from(".hero .status", { autoAlpha: 0 }, "-=0.4");
+    if (isDesktop) hero.from(".glance", { autoAlpha: 0, y: dist * 1.5, scale: 0.97 }, 0.35);
+    else hero.from(".glance", { autoAlpha: 0, y: dist }, "-=0.3");
+
+    /* Section reveals: hidden start states set by GSAP, revealed in batches */
+    const items = gsap.utils.toArray(".reveal");
+    gsap.set(items, { autoAlpha: 0, y: dist });
+    ScrollTrigger.batch(items, {
+      start: "top 88%",
+      once: true,
+      onEnter: (batch) => gsap.to(batch, {
+        autoAlpha: 1, y: 0, duration: dur, ease: "power2.out",
+        stagger: isDesktop ? 0.1 : 0.06, overwrite: true,
+        clearProps: "transform"          // hand hover lifts back to CSS
+      })
+    });
+
+    /* Standout moment: the root line grows with your scroll and lights each section's node */
+    gsap.fromTo(".rail-fill", { scaleY: 0 }, {
+      scaleY: 1, ease: "none",
+      scrollTrigger: { trigger: ".rooted", start: "top 65%", end: "bottom 65%", scrub: isDesktop ? 0.6 : true }
+    });
+    gsap.utils.toArray(".node").forEach((node) => {
+      ScrollTrigger.create({
+        trigger: node, start: "top 65%",
+        onEnter: () => {
+          node.classList.add("lit");
+          if (isDesktop) gsap.fromTo(node, { scale: 1 }, { scale: 1.35, duration: 0.18, yoyo: true, repeat: 1, ease: "power1.out" });
+        },
+        onLeaveBack: () => node.classList.remove("lit")
+      });
+    });
+
+    return () => { gsap.set(".node", { clearProps: "transform" }); document.querySelectorAll(".node").forEach(n => n.classList.remove("lit")); };
+  });
+
+  // With reduced motion: the line is simply full and every node is lit
+  mm.add("(prefers-reduced-motion: reduce)", () => {
+    document.querySelectorAll(".node").forEach(n => n.classList.add("lit"));
+  });
+
+  // Recalculate positions once web fonts have loaded
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+})();
 </script>
-</body>
-</html>
+
+</body></html>
